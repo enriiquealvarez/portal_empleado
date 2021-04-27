@@ -1,5 +1,5 @@
 <?php
-    
+    //Comentario Fernando 
     session_start();
     require 'conexion.php';
     if(!isset($_SESSION['id'])){
