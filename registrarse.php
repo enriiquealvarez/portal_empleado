@@ -67,9 +67,12 @@ registro();
                                             name="fk_enlace" placeholder="Enlace">
                                     </div>                                  
                                 </div>
-                                   <button type="submit" name="registro">                    
-                                    </button>
-                                
+                                <button type="submit" class="btn btn-primary">
+                                                    Registrarse
+                                </button>
+                                <button type="submit" class="btn btn-danger">
+                                                    Cancelar
+                                </button>
                             </form>
                             <hr>
                             <div class="text-center">
