@@ -29,7 +29,7 @@
     //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
     if ($tipo_usuario==1){
         $sql= "SELECT fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
-        AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf FROM pri_cfdi 
+        AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
         INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
         INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado";
 
@@ -39,7 +39,7 @@
     
     else if($tipo_usuario==2){
     $sql= "SELECT fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
-    AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf FROM pri_cfdi 
+    AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
     INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where fk_empleado=$enlace";
     $resultado = $mysqli->query($sql);
     }
@@ -611,12 +611,12 @@
 
                                                     
                                                     <td>
-                                                        <button type="submit" name="descargamxl" value="<?php echo $row['fk_empleado']?>">
+                                                        <button type="submit" name="descargamxl" value="<?php echo $row['id_cfdi']?>">
                                                             <img src='media/xml.png' width="40" height="40" >
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <button type="submit" name="descargapdf" value="<?php echo $row['fk_empleado']?>">
+                                                        <button type="submit" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
                                                             <img src='media/pdf.png' width="40" height="40" >
                                                         </button>
                                                     </td>
