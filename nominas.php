@@ -12,7 +12,6 @@
     $id = $_SESSION['id'];
     $rfc= $_SESSION['rfc'];
     $enlace = $_SESSION['fk_enlace'];
-    $ControlEnlace=1;
 
 
     if(!isset($_SESSION['id'])){
@@ -98,24 +97,24 @@
               <!-- CONTROL DE TOKEN PARA LINK DECLARACIONES -->
               <li class="nav-item active">
 
-                <?php switch ($ControlEnlace) {
+                <?php switch ($enlace) {
                 case 1:?>
                     <a class="nav-link" href="http://declaraciones/auth/MS0xZGFkbSYlLTMtNA==">
                 <?php
                 break;
 
                 case 2:?>
-                    <a class="nav-link" href=""> 
+                    <a class="nav-link" href="http://declaraciones/auth/Mi0yZGFkbSYlLTMtNA=="> 
                 <?php
                 break;
 
                 case 4:?>
-                    <a class="nav-link" href=""> 
+                    <a class="nav-link" href="http://declaraciones/auth/NC00ZGFkbSYlLTMtNA=="> 
                 <?php
                 break;
 
                 case 5:?>
-                    <a class="nav-link" href=""> 
+                    <a class="nav-link" href="http://declaraciones/auth/NS01ZGFkbSYlLTMtNA=="> 
                 <?php
                 break;
 
@@ -275,7 +274,7 @@
                 <?php
                 break;
                 case 51:?>
-                    <a class="nav-link" href=""> 
+                    <a class="nav-link" href="http://declaraciones/auth/NTEtNTFkYWRtJiUtMy00"> 
                 <?php
                 break;
                 case 52:?>
