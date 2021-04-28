@@ -616,7 +616,7 @@
                                                     </td>
                                                     <td>
                                                         <button type="submit" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
-                                                            <img src='media/pdf.png' width="40" height="40" >
+                                                             <img src='media/pdf.png' width="40" height="40" >
                                                         </button>
                                                     </td>
                                             </tr>
