@@ -90,7 +90,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fa fa-table"></i>
                     <span>Nóminas</span></a>
             </li>
