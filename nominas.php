@@ -1,5 +1,4 @@
 <?php
-    //Comentario Fernando 
     session_start();
     require 'conexion.php';
     if(!isset($_SESSION['id'])){
@@ -13,11 +12,11 @@
     $id = $_SESSION['id'];
     $rfc= $_SESSION['rfc'];
     $enlace = $_SESSION['fk_enlace'];
-    /*
+    
     if(!isset($_SESSION['id'])){
         header("Location: index.php");
     }
-    */
+    
     //Validación para comprobar si es un Tipo_Usuario =1 (admin), de lo contrario si es un Tipo_Usuario=2 (usuario)
     if($tipo_usuario==1){
         $where="WHERE fk_empleado=$enlace";
