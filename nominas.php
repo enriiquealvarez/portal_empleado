@@ -28,7 +28,7 @@
     
     //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
     if ($tipo_usuario==1){
-        $sql= "SELECT fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
+        $sql= "SELECT id_cfdi, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
         AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
         INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
         INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado";
@@ -38,7 +38,7 @@
     }
     
     else if($tipo_usuario==2){
-    $sql= "SELECT fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
+    $sql= "SELECT id_cfdi, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
     AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
     INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where fk_empleado=$enlace";
     $resultado = $mysqli->query($sql);
