@@ -6,7 +6,7 @@ require 'conexion.php';
     if(isset($_POST['descargamxl']))
     {
       $idEmpleado = $_POST['descargamxl'];
-      $query = mysqli_query($mysqli,"SELECT CAST(cfdi_xml_cfdi AS character) as XML FROM pri_cfdi WHERE fk_empleado=".$idEmpleado) or die(mysqli_error());
+      $query = mysqli_query($mysqli,"SELECT CAST(cfdi_xml_cfdi AS character) as XML FROM pri_cfdi WHERE id_cfdi=".$idEmpleado) or die(mysqli_error());
 
       $row = mysqli_fetch_array($query);
       $dato=$row["XML"];
@@ -23,11 +23,9 @@ require 'conexion.php';
     else if (isset($_POST['descargapdf'])) 
     {
       $idEmpleado = $_POST['descargapdf'];
-      $query = mysqli_query($mysqli,"SELECT cfdi_pdf FROM pri_cfdi WHERE fk_empleado=".$idEmpleado) or die(mysqli_error());
-
+      $query = mysqli_query($mysqli,"SELECT cfdi_pdf_timbrado FROM pri_cfdi WHERE id_cfdi=".$idEmpleado) or die(mysqli_error());
       $row = mysqli_fetch_array($query);
-      header('Content-type: application/pdf');
-      echo $dato=$row['cfdi_pdf'];
+      $dato=$row['cfdi_pdf_timbrado'];
 
       header("Content-type: application/pdf");
       header("Content-Disposition: inline;filename=Nomina.pdf");
@@ -40,3 +38,4 @@ require 'conexion.php';
     }
     
 ?> 
+
