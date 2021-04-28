@@ -12,7 +12,9 @@
     $id = $_SESSION['id'];
     $rfc= $_SESSION['rfc'];
     $enlace = $_SESSION['fk_enlace'];
-    
+    $ControlEnlace=1;
+
+
     if(!isset($_SESSION['id'])){
         header("Location: index.php");
     }
@@ -93,6 +95,416 @@
                     <i class="fa fa-table"></i>
                     <span>Nóminas</span></a>
             </li>
+              <!-- CONTROL DE TOKEN PARA LINK DECLARACIONES -->
+              <li class="nav-item active">
+
+                <?php switch ($ControlEnlace) {
+                case 1:?>
+                    <a class="nav-link" href="http://declaraciones/auth/MS0xZGFkbSYlLTMtNA==">
+                <?php
+                break;
+
+                case 2:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 4:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 5:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 6:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 7:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 8:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 9:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 10:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 11:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 12:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 13:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 14:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 15:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 16:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 17:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 18:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 19:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 20:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 21:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 23:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 24:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 25:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 27:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 28:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 29:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 30:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 31:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 32:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 33:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 34:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 35:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 36:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 38:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 41:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 43:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 44:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 45:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 46:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 47:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 48:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 50:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 51:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 52:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 63:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 66:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 68:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 70:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 71:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 72:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 73:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 74:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 75:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 76:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 78:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 79:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 80:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 81:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 82:?>
+                    <a class="nav-link" href="http://declaraciones/auth/MS0xZGFkbSYlLTMtNA==">
+                <?php
+                break;
+
+                case 83:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 84:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 85:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 86:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 87:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 88:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+
+                case 89:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 90:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 91:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 96:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 98:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 99:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 100:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 101:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 102:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 103:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 105:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 106:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 107:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 108:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 109:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 110:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 111:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 115:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 116:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 118:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 119:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 120:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 121:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 123:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 124:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 125:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 126:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 127:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 128:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 129:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                case 122:?>
+                    <a class="nav-link" href=""> 
+                <?php
+                break;
+                }
+                ?>
+
+                <i class="fa fa-table"></i>
+                <span>Declaraciones</span></a>
+                </li>
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
