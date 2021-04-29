@@ -5,12 +5,8 @@
         header("Location: index.php");
     }
 
-    $nombre = $_SESSION['nombre'];
-    $apellidos= $_SESSION['apellidos'];
-    $nombre_completo= $nombre . ' ' . $apellidos;
     $tipo_usuario =$_SESSION['tipo_usuario'];
     $id = $_SESSION['id'];
-    $rfc= $_SESSION['rfc'];
     $enlace = $_SESSION['fk_enlace'];
 
 
@@ -37,10 +33,10 @@
     }
     
     else if($tipo_usuario==2){
-    $sql= "SELECT id_cfdi, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
-    AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
-    INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where fk_empleado=$enlace";
-    $resultado = $mysqli->query($sql);
+        $sql= "SELECT id_cfdi, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
+        AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
+        INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where fk_empleado=$enlace";
+        $resultado = $mysqli->query($sql);
     }
     ?>
 
