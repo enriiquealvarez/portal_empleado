@@ -32,7 +32,7 @@ registro();
 
 </head>
 
-<body class="bg-gradient-primary">
+<body style="background-color:#702c44;">
 
     <div class="container">
 
@@ -50,21 +50,22 @@ registro();
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
-                                            placeholder="Correo Electrónico">
+                                            required placeholder="Correo Electrónico">
+                                            
                                     </div>
                           
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="contrasena" class="form-control form-control-user"
-                                            name="contrasena" placeholder="Contraseña">
+                                            name="contrasena" required placeholder="Contraseña">
                                     </div>
                                    
                                 </div>
                                 <div class="form-group row">  
                                     <div class="col-sm-6">
                                         <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace" placeholder="Enlace">
+                                            name="fk_enlace" required placeholder="Enlace">
                                     </div>                                  
                                 </div>
                                 <button type="submit" class="btn btn-primary">

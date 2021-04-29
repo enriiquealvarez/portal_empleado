@@ -64,8 +64,19 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+<header>
 
-<body class="bg-gradient-primary">
+  <!-- HEADER -->
+  <div class="p-5 text-center bg-white">
+  <img
+  src="media/LOGO TA Horizontal.png"
+  class="img-fluid shadow-2-strong"
+  alt="" width="430px" height="138px"/>
+  </div>
+  <!-- FINALIZANDO HEADER -->
+</header>
+
+<body style="background-color:#702c44;">
 
     <div class="container">
 
@@ -74,7 +85,7 @@
 
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 
-                <div class="card card-signin my-5">
+                <div class="card card-signin my-3">
                     <div class="card-body">
 
                                     <div class="text-center">
@@ -170,7 +181,7 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+  <div class="text-center p-3" style="background-color: rgb(202,181,149)">
     © 2021 Copyright Todos los Derechos Reservados:
     <a class="text-dark" href="https://www.tachiapas.gob.mx/">Visita el Portal Oficial</a>
   </div>
