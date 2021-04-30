@@ -26,7 +26,7 @@
         $sql= "SELECT id_cfdi, emp_rfc, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
         AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
         INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
-        INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado";
+        INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0";
 
         $resultado = $mysqli->query($sql);
         $ResultadosEmpleado = $resultado->fetch_assoc();
@@ -40,7 +40,8 @@
     else if($tipo_usuario==2){
         $sql= "SELECT id_cfdi, emp_rfc, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
         AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
-        INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where fk_empleado=$enlace";
+        INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
+        INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0 AND fk_empleado=$enlace";
         $resultado = $mysqli->query($sql);
         $ResultadosEmpleado = $resultado->fetch_assoc();
 
@@ -608,6 +609,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                    <?php $resultado = $mysqli->query($sql); ?>
                                         <?php while($row = $resultado->fetch_assoc()){ ?>
                                             <tr>
                                                     <td><?php echo $row['empleado'] ?></td>

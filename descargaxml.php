@@ -33,6 +33,5 @@ require 'conexion.php';
     echo base64_decode($dato); //si usas este, elimina el echo anterior ;-)
     }
 
-
 ?> 
 
