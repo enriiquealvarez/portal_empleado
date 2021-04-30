@@ -26,16 +26,13 @@ require 'conexion.php';
       $query = mysqli_query($mysqli,"SELECT cfdi_pdf_timbrado FROM pri_cfdi WHERE id_cfdi=".$idEmpleado) or die(mysqli_error());
       $row = mysqli_fetch_array($query);
       $dato=$row['cfdi_pdf_timbrado'];
-
-      header("Content-type: application/pdf");
-      header("Content-Disposition: inline;filename=Nomina.pdf");
-      header('Cache-Control: no-cache, no-store, must-revalidate');
-      header('Expires:0');
-      $PDF = fopen("php://output", 'w');
-      fwrite($PDF, $dato);
-      fclose($PDF);
-      exit;
+      
+    header("Content-type: application/pdf");
+   // header('Content-Disposition: attachment; filename="downloaded.pdf"'); //solo para forzar descarga
+    //si está e base 64 seria:
+    echo base64_decode($dato); //si usas este, elimina el echo anterior ;-)
     }
-    
+
+
 ?> 
 
