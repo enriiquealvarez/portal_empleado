@@ -507,7 +507,7 @@
                 }
                 ?>
 
-                <i class="fa-file-text-o"></i>
+                <i class="fa fa-bars"></i>
                 <span>Declaraciones</span></a>
                 </li>
 
