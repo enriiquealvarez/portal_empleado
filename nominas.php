@@ -532,7 +532,7 @@
 
                 <!-- Topbar -->
 
-                <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: #6c2d43;">
+                <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <form class="form-inline">
