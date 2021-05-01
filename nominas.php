@@ -82,7 +82,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav navbar-light" style="background-color: #e3f2fd;"  id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #e3f2fd;" id="accordionSidebar">
 
 
             <!-- Sidebar - Brand -->
