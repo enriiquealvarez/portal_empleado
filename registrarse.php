@@ -59,7 +59,7 @@ registro();
                                         </div>
                                         <div class="form-group">
                                         <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace" required placeholder="Enlace">
+                                            name="fk_enlace" required placeholder="Enlace (lo consigues en el área de RH">
                                         </div>
                                         <button type="submit" class="btn btn-primary">
                                                     Registrarse
