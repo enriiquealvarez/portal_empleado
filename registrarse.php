@@ -193,9 +193,9 @@ registro();
 
 
 
+<!--
 
-
-<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form method="POST" action="<//?php echo $_SERVER['PHP_SELF']; ?>">
                                         <div class="form-group">
                                         <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
                                             required placeholder="Correo Electrónico">
@@ -215,3 +215,5 @@ registro();
                                                     Cancelar
                                         </button>
                                     </form>
+
+                                    -->
