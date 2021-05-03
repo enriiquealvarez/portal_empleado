@@ -1,5 +1,8 @@
 <?PHP
+session_start();
 require_once('func_registro.php');
+require_once('funcs/token-function.php');
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
 registro();
 }
@@ -32,6 +35,7 @@ registro();
 <body style="background-color:#702c44;">
 
     <div class="container">
+    
 
         <!-- Outer Row -->
         <div class="row">
@@ -39,6 +43,8 @@ registro();
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 
             <form action="<?PHP echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            
+            <input type="hidden" name="token" value="<?php echo create_token() ?>">
 
                 <div class="card card-signin my-3">
                     <div class="card-body">
