@@ -1,5 +1,5 @@
 <?php
-//Comentario Fernando 03/05/2021
+
     session_start();
     require 'conexion.php';
     if(!isset($_SESSION['id'])){
