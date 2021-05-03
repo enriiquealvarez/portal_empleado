@@ -75,7 +75,7 @@ registro();
                                         <a class="small" href="forgot-password.html">¿Olvidaste tu Contraseña?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="registrarse.php">Registrar mi Cuenta</a>
+                                        <a class="small" href="registrarse.php">Iniciar Sesión</a>
                                     </div>
                                 </div>
                             </div>
