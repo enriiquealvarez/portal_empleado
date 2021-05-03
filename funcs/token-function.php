@@ -2,11 +2,17 @@
 
 <?php
 
-function create_token(){
-    $token = bin2hex(random_bytes(32));
+if( !function_exists('random_bytes') )
+{
+    function random_bytes($length = 32)
+    {
+        $characters = '0123456789';
+        $characters_length = strlen($characters);
+        $output = '';
+        for ($i = 0; $i < $length; $i++)
+            $output .= $characters[rand(0, $characters_length - 1)];
 
-    return $token;
-
+        return $output;
+    }
 }
-
 ?>
