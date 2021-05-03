@@ -59,23 +59,25 @@ registro();
                                         </div>
                                         <div class="form-group">
                                         <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace" required placeholder="Enlace (lo consigues en el área de RH">
+                                            name="fk_enlace" required placeholder="Enlace (lo consigues en el área de RH)">
                                         </div>
                                         <button type="submit" class="btn btn-primary">
                                                     Registrarse
                                         </button>
-                                        <button type="submit" class="btn btn-danger">
+                                        <button type="submit" class="btn btn-danger" >
                                                     Cancelar
                                         </button>
                                     </form>
 
                                 
                                     <hr>
+                                    <!--
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">¿Olvidaste tu Contraseña?</a>
                                     </div>
+                                    -->
                                     <div class="text-center">
-                                        <a class="small" href="registrarse.php">Iniciar Sesión</a>
+                                    <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
                                     </div>
                                 </div>
                             </div>

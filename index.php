@@ -64,7 +64,7 @@
 <header>
 
   <!-- HEADER -->
-  <div class="p-5 text-center bg-white">
+  <div class="p-3 text-center bg-white">
   <img
   src="media/LOGO TA Horizontal.png"
   class="img-fluid shadow-2-strong"
@@ -80,7 +80,7 @@
         <!-- Outer Row -->
         <div class="row">
 
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="col-sm-10 col-md-7 col-lg-5 mx-auto">
 
                 <div class="card card-signin my-3">
                     <div class="card-body">
