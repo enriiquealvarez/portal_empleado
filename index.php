@@ -182,7 +182,8 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgb(209,189,161)">
-    © 2021 Copyright Todos los Derechos Reservados:
+  <a class="text-dark">© 2021 Copyright Todos los Derechos Reservados:</a>
+    
     <a class="text-dark" href="https://www.tachiapas.gob.mx/">Visita el Portal Oficial</a>
   </div>
   <!-- Copyright -->
