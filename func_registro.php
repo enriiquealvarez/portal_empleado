@@ -1,5 +1,10 @@
 <?php 
-//Comentario Ing. Enrique Alvarez
+
+require_once('funcs/token-function.php');
+if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['token']) && compare_token($_POST['token'])){
+    registro();
+}
+
 function registro(){
     require_once('conexion.php');
 
