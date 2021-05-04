@@ -36,11 +36,6 @@ function registro(){
     if($result === 1)
     {
         $_SESSION['correo_electronico']=$email;
-<<<<<<< HEAD
-        header('Location: index.php');
-    }
-
-=======
         ?>
 
         <html>
@@ -58,7 +53,6 @@ function registro(){
 
     }
 
->>>>>>> 1bdae1dfdfd18177ef04f1cdea3286a69f6a05f9
 }
 
 function limpiar($datos){
