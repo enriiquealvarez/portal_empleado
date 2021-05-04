@@ -1,44 +1,24 @@
 <?php
     require "conexion.php";
-    session_start();
-    if($_POST){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        
-         $sql= "SELECT id, contrasena, tipo_usuario, fk_enlace, correo_electronico FROM empleado WHERE correo_electronico= '$email' ";
+    require "funcs/existe-correo.php";
 
-        $resultado = $mysqli->query($sql);
+    $errors=array();
+    if(!empty($_POST))
+    {
+       //$correo=$_POST['correo'];
+       $correo="valdesnanduca@gmail.com";
+       $sql= "SELECT id, contrasena, tipo_usuario, fk_enlace, correo_electronico FROM empleado WHERE correo_electronico= '$correo' LIMIT 1 ";
+       $resultado = $mysqli->query($sql);
+       $ResultadosEmpleado = $resultado->fetch_assoc();
 
-        $num = $resultado->num_rows;
-
-        if($num>0){
-            $row=$resultado->fetch_assoc();
-            $contraseña_bd = $row['contrasena'];
-            //contr_c (variable que significa Contraseña de cifrado, la cual con 'sha1' vamos a cifrar para proteger dicha contraseña)
-            $contr_c = sha1($password);
-
-            if($contraseña_bd == $contr_c){
-
-                $_SESSION['id']=$row['id'];
-                $_SESSION['nombre']=$row['nombre'];
-                $_SESSION['apellidos']=$row['apellidos'];
-                $_SESSION['tipo_usuario']=$row['tipo_usuario'];
-                $_SESSION['rfc']=$row['rfc'];
-                $_SESSION['fk_enlace']=$row['fk_enlace'];
-
-                header("Location: nominas.php");
-
-            }else{
-                echo "La contraseña no existe o es incorrecta";
-            }
+       $Contrasena= $ResultadosEmpleado['contrasena'];
+       $Asunto="Recuperacion de contraseña - Portal del empleado";
+       $Menssaje="Tu contraseña es".$Contrasena;
 
 
-        }else{
-            echo "El Usuario no existe o es incorrecto";
-        }
     }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -84,45 +64,36 @@
 
                 <div class="card card-signin my-3">
                     <div class="card-body">
+                    <form method="POST" action="Recuperar-contrasena.php" >
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-2">Recuperar contraseña</h1>
+                            <p class="mb-4">Le enviaremos las indicaciones a su correo</p>
+                        </div>
+                        <form class="user">
+                            <div class="form-group">
+                                <input type="email" name="correo" class="form-control form-control-user"
+                                    id="exampleInputEmail" aria-describedby="emailHelp"
+                                    placeholder="Ingresar correo...">
+                            </div>
+                            <button type="submit"class="btn btn-primary btn-user btn-block">
+                                Recuperar contraseña
+                            </button>
+                        </form>
+                        <hr>
 
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
-                                        <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado</h2>
-                                    </div>
-                                    <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
-                                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                name= "email" type ="text" aria-describedby="emailHelp"
-                                                placeholder="Introduce tu Correo Electrónico" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                 name= "password" type ="password" placeholder="Contraseña" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Recordarme</label>
-                                            </div>
-                                        </div>
-                                                <button type="submit" class="btn btn-primary">
-                                                    Iniciar Sesión
-                                                </button>
-                                    </form>
-
-                                
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="Recuperar-contrasena.php">¿Olvidaste tu Contraseña?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="registrarse.php">Registrar mi Cuenta</a>
-                                    </div>
+                    
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
+                        </div>
+                        <div class="text-center">
+                            <a class="small" href="registrarse.php">Registrar mi Cuenta</a>
+                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
 
             </div>
