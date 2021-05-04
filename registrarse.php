@@ -5,7 +5,8 @@ require_once('funcs/token-function.php');
 require_once('funcs/server-validation-function.php');
 
 if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['token']) && compare_token($_POST['token'])){
-registro();
+registro();?>
+<?PHP
 }
 ?>
 
@@ -30,9 +31,17 @@ registro();
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
+<header>
 
+  <!-- HEADER -->
+  <div class="p-3 text-center" style="background-color:#702c44;">
+
+  </div>
+  <!-- FINALIZANDO HEADER -->
+</header>
 <body style="background-color:#702c44;">
 
     <div class="container">
@@ -52,7 +61,7 @@ registro();
 
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4"> Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
-                                        <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado  Registro de Empleado</h2>
+                                        <h2 class="h5 text-gray-800 mb-4" >Registro de Empleado</h2>
                                     </div>
                                     <?php if(!empty($errores)){echo 'Error';} ?>
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
@@ -63,7 +72,7 @@ registro();
                                              placeholder="Correo Electrónico">
                                         </div>
                                         <div class="form-group">
-                                        <input type="contrasena" class="form-control form-control-user"
+                                        <input type="password" class="form-control form-control-user"
                                             name="contrasena"  placeholder="Contraseña">
                                         </div>
                                         <div class="form-group">
@@ -100,8 +109,15 @@ registro();
 
     </div>
 
+<<<<<<< HEAD
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
+=======
+
+</div>
+     <!-- Bootstrap core JavaScript-->
+     <script src="vendor/jquery/jquery.min.js"></script>
+>>>>>>> 1bdae1dfdfd18177ef04f1cdea3286a69f6a05f9
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -109,6 +125,55 @@ registro();
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+<!-- Footer -->
+<footer class=" text-center fixed-bottom " style="background-color:#ffffff;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/tachiapas/" target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/TAChiapas" target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/tachiapas/" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+      
+      <!--Youtube-->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #e74a3b" href="https://www.youtube.com/channel/UCgnQj1mpO2Rq3DkE1yOpKtA" target="_blank" role="button"><i class="fab fa-youtube"></i></a>
+
+    </section>
+    <!-- Section: Social media -->
+
+
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        AVISO DE PRIVACIDAD: En relación a los datos personales a proporcionar, éstos serán protegidos en observancia de la Ley de Protección de Datos Personales en Posesión de Sujetos Obligados del Estado, por lo tanto al registrarse otorga su consentimiento exclusivamente para el tratamiento y/o fines establecidos en este sistema.
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(209,189,161)">
+  © 2021 Copyright Todos los Derechos Reservados:
+    
+    <a class="text-dark" href="https://www.tachiapas.gob.mx/">Visita el Portal Oficial</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
 
 </body>
 
