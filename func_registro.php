@@ -33,12 +33,24 @@ function registro(){
     $dec -> close();
     $mysqli -> close();
 
-    if($result === 1){
+    if($result === 1)
+    {
         $_SESSION['correo_electronico']=$email;
-        header ('Location: index.php');
+        ?>
+
+        <html>
+            <div class="card-body">
+                <div class="text-center">     
+                    <div class="alert alert-success" role="alert">!REGISTRO COMPLETADO! <a href="index.php" class="alert-link">Iniciar Sesión</a> </div>
+                </div>
+            </div>
+        </div>
+       
+        <?php
+
+        //header ('Location: index.php');
 
     }
-
 
 }
 
