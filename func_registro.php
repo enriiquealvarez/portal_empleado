@@ -35,10 +35,8 @@ function registro(){
 
     if($result === 1){
         $_SESSION['correo_electronico']=$email;
-        header ('Location: index.php');
-
+        header('Location: index.php');
     }
-
 
 }
 

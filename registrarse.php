@@ -57,6 +57,7 @@ registro();
                                     <?php if(!empty($errores)){echo 'Error';} ?>
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                      
                                         <div class="form-group">
                                         <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
                                              placeholder="Correo Electrónico">
@@ -99,61 +100,6 @@ registro();
 
     </div>
 
-
-<!--
-<body style="background-color:#702c44;">
-
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg  my-5">
-
-        
-
-                <form action="<?PHP echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-800 mb-5">Portal del Empleado - Crear una cuenta</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group">
-                                    <div class="col-sm-6 mb-6">
-                                        <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
-                                            required placeholder="Correo Electrónico">
-                                    </div>
-                          
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-6 mb-3">
-                                        <input type="contrasena" class="form-control form-control-user"
-                                            name="contrasena" required placeholder="Contraseña">
-                                    </div>
-                                   
-                                </div>
-                                <div class="form-group">  
-                                    <div class="col-sm-6">
-                                        <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace" required placeholder="Enlace">
-                                    </div>                                  
-                                </div>
-                                <button type="submit" class="btn btn-primary">
-                                                    Registrarse
-                                </button>
-                                <button type="submit" class="btn btn-danger">
-                                                    Cancelar
-                                </button>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
--->
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
