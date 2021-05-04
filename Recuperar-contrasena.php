@@ -1,24 +1,3 @@
-<?php
-    require "conexion.php";
-    require "funcs/existe-correo.php";
-
-    $errors=array();
-    if(!empty($_POST))
-    {
-       //$correo=$_POST['correo'];
-       $correo="valdesnanduca@gmail.com";
-       $sql= "SELECT id, contrasena, tipo_usuario, fk_enlace, correo_electronico FROM empleado WHERE correo_electronico= '$correo' LIMIT 1 ";
-       $resultado = $mysqli->query($sql);
-       $ResultadosEmpleado = $resultado->fetch_assoc();
-
-       $Contrasena= $ResultadosEmpleado['contrasena'];
-       $Asunto="Recuperacion de contraseña - Portal del empleado";
-       $Menssaje="Tu contraseña es".$Contrasena;
-
-
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -64,7 +43,7 @@
 
                 <div class="card card-signin my-3">
                     <div class="card-body">
-                    <form method="POST" action="Recuperar-contrasena.php" >
+                    <form method="POST" action="funcs/enviarcorreo.php" >
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-2">Recuperar contraseña</h1>
                             <p class="mb-4">Le enviaremos las indicaciones a su correo</p>
