@@ -138,7 +138,7 @@
                 break;
 
                 case 8:?>
-                    <a class="nav-link" href=""> 
+                    <a class="nav-link" href="http://declaraciones/auth/OC04ZGFkbSYlLTMtNA=="> 
                 <?php
                 break;
 
@@ -276,6 +276,10 @@
                 break;
                 case 48:?>
                     <a class="nav-link" href="http://declaraciones/auth/NDgtNDhkYWRtJiUtMy00"> 
+                <?php
+                break;
+                case 49:?>
+                    <a class="nav-link" href="http://declaraciones/auth/NDktNDlkYWRtJiUtMy00"> 
                 <?php
                 break;
                 case 50:?>
