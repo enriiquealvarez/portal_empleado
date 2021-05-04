@@ -2,8 +2,9 @@
 session_start();
 require_once('func_registro.php');
 require_once('funcs/token-function.php');
+require_once('funcs/server-validation-function.php');
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['token']) && compare_token($_POST['token'])){
 registro();
 }
 ?>
@@ -44,28 +45,29 @@ registro();
 <!--se hacen correcciones-->
             <form action="<?PHP echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
             
-            <input type="hidden" name="token" value="<?php echo create_token() ?>">
+            <input type="hidden" name="token" value="<?php echo create_token(32) ?>">
 
                 <div class="card card-signin my-3">
                     <div class="card-body">
 
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
-                                        <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado | Registro de Empleado</h2>
+                                        <h1 class="h4 text-gray-900 mb-4"> Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
+                                        <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado  Registro de Empleado</h2>
                                     </div>
+                                    <?php if(!empty($errores)){echo 'Error';} ?>
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                         <div class="form-group">
                                         <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
-                                            required placeholder="Correo Electrónico">
+                                             placeholder="Correo Electrónico">
                                         </div>
                                         <div class="form-group">
                                         <input type="contrasena" class="form-control form-control-user"
-                                            name="contrasena" required placeholder="Contraseña">
+                                            name="contrasena"  placeholder="Contraseña">
                                         </div>
                                         <div class="form-group">
                                         <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace" required placeholder="Enlace (lo consigues en el área de RH)">
+                                            name="fk_enlace"  placeholder="Enlace (lo consigues en el área de RH)">
                                         </div>
                                         <button type="submit" class="btn btn-primary">
                                                     Registrarse

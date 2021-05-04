@@ -1,9 +1,10 @@
 <?php
+
 //correo_electronico
 //contrasena
 //fk_enlace
 function reglas(){
-    $validation = [
+    $validacion = [
         'correo_electronico' => [
             'patron' => '/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/',
             'error' => 'Proporciona un correo electrónico válido.'
@@ -17,7 +18,19 @@ function reglas(){
             'error' => 'El enlace debe contener sólo números'
         ]
     ];
-    return $validation;  
+    return $validacion;  
+}
+
+function validar($fields){
+    $errores = [];
+
+    foreach ($fields as $name => $display){
+        if(!isset($_POST[$name]) || $_POST[$name]== NULL ){
+           $errores[]= $display.' es un campo requerido'; 
+        }
+    }
+
+    return $errores;
 }
 
 ?>
