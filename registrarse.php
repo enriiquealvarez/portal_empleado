@@ -54,9 +54,23 @@ registro();
                                         <h1 class="h4 text-gray-900 mb-4"> Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
                                         <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado  Registro de Empleado</h2>
                                     </div>
-                                    <?php if(!empty($errores)){echo 'Error';} ?>
+                                    
+                                  
+
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <?php 
+                                        if(!empty($errores))
+                                        {
+                                            $resultado ='<div class="form-group">
+                                                <div class="alert alert-danger"><ul>';
+                                                foreach($errores as $error){
+                                                    $resultado .= "<li>$error</li>";
+                                                }
+                                                $result .='</ul></div>'; 
+                                                echo $resultado;                                          
+                                        } 
+                                    ?>
                                         <div class="form-group">
                                         <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
                                              placeholder="Correo Electrónico">
