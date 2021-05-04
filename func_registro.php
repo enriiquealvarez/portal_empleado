@@ -44,6 +44,7 @@ function registro(){
         ?>
 
         <html>
+            
             <div class="card-body">
                 <div class="text-center">     
                     <div class="alert alert-success" role="alert">!REGISTRO COMPLETADO! <a href="index.php" class="alert-link">Iniciar Sesión</a> </div>
