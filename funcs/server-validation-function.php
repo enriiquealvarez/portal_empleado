@@ -12,7 +12,7 @@ function reglas(){
             'error' => 'Proporciona un correo electrónico válido.'
         ],
         'contrasena' => [
-            'patron' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/',
+            'patron' => '/^(?=.*[a-z0-9])(?=.*[A-Z0-9])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/',
             'error' => 'Por favor, ingresa una contraseña válida. Debe contener al menos 1 letra minúscula, 1 letra mayúscula, 1 número y caracteres especiales son opcionales. '
         ],
         'fk_enlace' => [

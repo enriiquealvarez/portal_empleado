@@ -109,15 +109,8 @@ registro();?>
 
     </div>
 
-<<<<<<< HEAD
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
-=======
-
-</div>
-     <!-- Bootstrap core JavaScript-->
-     <script src="vendor/jquery/jquery.min.js"></script>
->>>>>>> 1bdae1dfdfd18177ef04f1cdea3286a69f6a05f9
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
