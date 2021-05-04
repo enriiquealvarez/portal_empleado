@@ -5,8 +5,7 @@ require_once('funcs/token-function.php');
 require_once('funcs/server-validation-function.php');
 
 if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['token']) && compare_token($_POST['token'])){
-registro();?>
-<?PHP
+registro();
 }
 ?>
 
@@ -31,17 +30,9 @@ registro();?>
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
-<header>
 
-  <!-- HEADER -->
-  <div class="p-3 text-center" style="background-color:#702c44;">
-
-  </div>
-  <!-- FINALIZANDO HEADER -->
-</header>
 <body style="background-color:#702c44;">
 
     <div class="container">
@@ -61,18 +52,17 @@ registro();?>
 
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4"> Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
-                                        <h2 class="h5 text-gray-800 mb-4" >Registro de Empleado</h2>
+                                        <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado  Registro de Empleado</h2>
                                     </div>
                                     <?php if(!empty($errores)){echo 'Error';} ?>
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                      
                                         <div class="form-group">
                                         <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
                                              placeholder="Correo Electrónico">
                                         </div>
                                         <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="contrasena" class="form-control form-control-user"
                                             name="contrasena"  placeholder="Contraseña">
                                         </div>
                                         <div class="form-group">
@@ -109,6 +99,61 @@ registro();?>
 
     </div>
 
+
+<!--
+<body style="background-color:#702c44;">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg  my-5">
+
+        
+
+                <form action="<?PHP echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-800 mb-5">Portal del Empleado - Crear una cuenta</h1>
+                            </div>
+                            <form class="user">
+                                <div class="form-group">
+                                    <div class="col-sm-6 mb-6">
+                                        <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
+                                            required placeholder="Correo Electrónico">
+                                    </div>
+                          
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6 mb-3">
+                                        <input type="contrasena" class="form-control form-control-user"
+                                            name="contrasena" required placeholder="Contraseña">
+                                    </div>
+                                   
+                                </div>
+                                <div class="form-group">  
+                                    <div class="col-sm-6">
+                                        <input type="fk_enlace" class="form-control form-control-user"
+                                            name="fk_enlace" required placeholder="Enlace">
+                                    </div>                                  
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                                    Registrarse
+                                </button>
+                                <button type="submit" class="btn btn-danger">
+                                                    Cancelar
+                                </button>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+-->
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -118,55 +163,6 @@ registro();?>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-<!-- Footer -->
-<footer class=" text-center fixed-bottom " style="background-color:#ffffff;">
-  <!-- Grid container -->
-  <div class="container p-4">
-
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/tachiapas/" target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/TAChiapas" target="_blank" role="button"><i class="fab fa-twitter"></i></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/tachiapas/" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
-      
-      <!--Youtube-->
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #e74a3b" href="https://www.youtube.com/channel/UCgnQj1mpO2Rq3DkE1yOpKtA" target="_blank" role="button"><i class="fab fa-youtube"></i></a>
-
-    </section>
-    <!-- Section: Social media -->
-
-
-
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        AVISO DE PRIVACIDAD: En relación a los datos personales a proporcionar, éstos serán protegidos en observancia de la Ley de Protección de Datos Personales en Posesión de Sujetos Obligados del Estado, por lo tanto al registrarse otorga su consentimiento exclusivamente para el tratamiento y/o fines establecidos en este sistema.
-      </p>
-    </section>
-    <!-- Section: Text -->
-
-
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgb(209,189,161)">
-  © 2021 Copyright Todos los Derechos Reservados:
-    
-    <a class="text-dark" href="https://www.tachiapas.gob.mx/">Visita el Portal Oficial</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
-
-
 
 </body>
 

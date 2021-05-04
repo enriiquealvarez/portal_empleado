@@ -1,7 +1,6 @@
-<!--Código para ocultar Warnings-->
+<?php
 <?php error_reporting (0);?>
 
-<?php
 //correo_electronico
 //contrasena
 //fk_enlace
@@ -29,15 +28,6 @@ function validar($fields){
     foreach ($fields as $name => $display){
         if(!isset($_POST[$name]) || $_POST[$name]== NULL ){
            $errores[]= $display.' es un campo requerido'; 
-        }else{
-            $reglas = reglas();
-            foreach($reglas as $field => $option){
-                if($name == $field){
-                    if(!preg_match($option['patron'], $_POST[$name])){
-                        $errores[] = $option ['error'];
-                    }
-                }
-            }
         }
     }
 
