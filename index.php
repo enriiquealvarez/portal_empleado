@@ -114,7 +114,7 @@
                                 
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">¿Olvidaste tu Contraseña?</a>
+                                        <a class="small" href="Recuperar-contrasena.php">¿Olvidaste tu Contraseña?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="registrarse.php">Registrar mi Cuenta</a>
