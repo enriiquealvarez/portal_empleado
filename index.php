@@ -86,7 +86,7 @@
                     <div class="card-body">
 
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Tribuna Administrativo del Poder Judicial del Estado de Chiapas</h1>
                                         <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado</h2>
                                     </div>
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
