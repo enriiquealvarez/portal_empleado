@@ -1,7 +1,3 @@
-<?php
-    $IDEMPLEADO = $_GET['empleado'];
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,14 +21,13 @@
 
 </head>
 <header>
-
-  <!-- HEADER -->
   <div class="p-3 text-center bg-white">
   <img
   src="media/LOGO TA Horizontal.png"
   class="img-fluid shadow-2-strong"
   alt="" width="430px" height="138px"/>
   </div>
+  </body>
   <!-- FINALIZANDO HEADER -->
 </header>
 
@@ -48,38 +43,19 @@
                 <div class="card card-signin my-3">
                     <div class="card-body">
                    
-                    <form method="POST" action="funcs/validarcodigo.php">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-2">Restablecer Contraseña</h1>
-                            <p class="mb-4">Ingresa los datos solicitados para restablecer la contraseña</p>
+                            <div class="alert alert-success"><ul>';
+; 
+                            <h1 class="h4 text-gray-900 mb-2">La contraseña se cambio correctamente</h1>
+                           
+                                    </ul></div>
+                            <p class="mb-4">Ingresa al sistema con tu nueva contraseña</p>
                         </div>
-                        <form class="user">
-                            <div class="form-group">
-                                <input type="password" name="nuevopass" class="form-control form-control-user"
-                                    id="exampleInputEmail" aria-describedby="emailHelp"
-                                    placeholder="Ingresa tu nueva contraseña">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="codigo" class="form-control form-control-user"
-                                    id="exampleInputEmail" aria-describedby="emailHelp"
-                                    placeholder="Ingresa tu código">
-                            </div>
 
-                            <button type="submit"class="btn btn-primary btn-user btn-block" name="BtnRecuperar" value="<?php echo $IDEMPLEADO?>">
-                                Recuperar contraseña
-                            </button>
-                            <p class="mb-4">Ingresa el Código que se te envió al correo electronico</p>
-                        </form>
-                        <hr>
-
-                    
-                        <hr>
                         <div class="text-center">
-                            <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
+                            <a class="small" href="index.php">Iniciar Sesión</a>
                         </div>
-                        <div class="text-center">
-                            <a class="small" href="registrarse.php">Registrar mi Cuenta</a>
-                        </div>
+                       
                                 </div>
                             </div>
                         </div>
