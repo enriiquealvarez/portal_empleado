@@ -12,9 +12,19 @@
        $sql= "SELECT id, contrasena, tipo_usuario, fk_enlace, correo_electronico FROM empleado WHERE correo_electronico= '$correo' LIMIT 1 ";
        $resultado = $mysqli->query($sql);
        $ResultadosEmpleado = $resultado->fetch_assoc();
-       $Contrasena= $ResultadosEmpleado['contrasena'];
-
+       $id_empleado= $ResultadosEmpleado['id'];
     }
+
+    if( $Contrasena==NULL)
+    {
+        echo "El correo no existe";
+    }
+
+    $codigo=random_int(10000, 99999);
+
+    $sql= "UPDATE empleado SET codigo='$codigo' WHERE id= '$id_empleado' LIMIT 1 ";
+    $resultado = $mysqli->query($sql);
+
 
     $mail = new PHPMailer(true);
 
@@ -29,7 +39,7 @@ try {
     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('descansototalhoy@gmail.com', 'Servicios portal del empleado');
+    $mail->setFrom('descansototalhoy@gmail.com', 'TACHIAPAS');
     $mail->addAddress($correo);     //Add a recipient
 
 
@@ -39,12 +49,12 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'RECUPERACION DE CONTRASEÑA - PORTAL DEL EMPLEADO';
-    $mail->Body    = 'contraseña: '.$Contrasena;
+    $mail->Subject = 'SERVICIOS TACHIAPAS';
+    $mail->Body    = 'Usa el siguiente código para restablecer tu contraseña en el portal del empleado: '.$codigo.' Por favor no compartas este código.';
    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'EL mensaje se envió correctamente';
+    header('Location: http://portal-empleado/Restablecer-password.php?empleado='.$id_empleado);
 } catch (Exception $e) {
     echo "Hubo un error al enviar en mensaje: {$mail->ErrorInfo}";
 }
