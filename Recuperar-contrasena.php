@@ -63,7 +63,7 @@
                     
                         <hr>
                         <div class="text-center">
-                            <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
+                            <a class="small" href="index.php">Iniciar Sesión</a>
                         </div>
                         <div class="text-center">
                             <a class="small" href="registrarse.php">Registrar mi Cuenta</a>
