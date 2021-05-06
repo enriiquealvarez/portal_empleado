@@ -87,7 +87,7 @@
 
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
-                                        <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado</h2>
+                                        <h2 class="h5 text-gray-800 mb-4"><strong>Bienvenido al Portal del Empleado</strong></h2>
                                     </div>
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -168,7 +168,7 @@
     <!-- Section: Text -->
     <section class="mb-4">
       <p>
-        AVISO DE PRIVACIDAD: En relación a los datos personales a proporcionar, éstos serán protegidos en observancia de la Ley de Protección de Datos Personales en Posesión de Sujetos Obligados del Estado, por lo tanto al registrarse otorga su consentimiento exclusivamente para el tratamiento y/o fines establecidos en este sistema.
+        <strong>AVISO DE PRIVACIDAD:</strong><br> En relación a los datos personales a proporcionar, éstos serán protegidos en observancia de la Ley de Protección de Datos Personales en Posesión de Sujetos Obligados del Estado, por lo tanto al registrarse otorga su consentimiento exclusivamente para el tratamiento y/o fines establecidos en este sistema.
       </p>
     </section>
     <!-- Section: Text -->
