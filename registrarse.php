@@ -32,6 +32,17 @@ registro();
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+<header>
+
+  <!-- HEADER -->
+  <div class="p-3 text-center bg-white">
+  <img
+  src="media/LOGO TA Horizontal.png"
+  class="img-fluid shadow-2-strong"
+  alt="" width="430px" height="138px"/>
+  </div>
+  <!-- FINALIZANDO HEADER -->
+</header>
 
 <body style="background-color:#702c44;">
 
@@ -116,62 +127,6 @@ registro();
 
     </div>
 
-
-<!--
-<body style="background-color:#702c44;">
-
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg  my-5">
-
-        
-
-                <form action="<?PHP echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-800 mb-5">Portal del Empleado - Crear una cuenta</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group">
-                                    <div class="col-sm-6 mb-6">
-                                        <input type="correo_electronico" class="form-control form-control-user" name="correo_electronico"
-                                            required placeholder="Correo Electrónico">
-                                    </div>
-                          
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-6 mb-3">
-                                        <input type="contrasena" class="form-control form-control-user"
-                                            name="contrasena" required placeholder="Contraseña">
-                                    </div>
-                                   
-                                </div>
-                                <div class="form-group">  
-                                    <div class="col-sm-6">
-                                        <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace" required placeholder="Enlace">
-                                    </div>                                  
-                                </div>
-                                <button type="submit" class="btn btn-primary">
-                                                    Registrarse
-                                </button>
-                                <button type="submit" class="btn btn-danger">
-                                                    Cancelar
-                                </button>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="index.php">¿Ya estás registrado? Inicia Sesión</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
--->
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -180,6 +135,43 @@ registro();
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+<!-- Footer -->
+<footer class=" text-center fixed-bottom " style="background-color:#ffffff;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/tachiapas/" target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/TAChiapas" target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/tachiapas/" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+      
+      <!--Youtube-->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #e74a3b" href="https://www.youtube.com/channel/UCgnQj1mpO2Rq3DkE1yOpKtA" target="_blank" role="button"><i class="fab fa-youtube"></i></a>
+
+    </section>
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(209,189,161)">
+  © 2021 Copyright Todos los Derechos Reservados:
+    
+    <a class="text-dark" href="https://www.tachiapas.gob.mx/">Visita el Portal Oficial</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
 
 </body>
 
