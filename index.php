@@ -106,7 +106,7 @@
                                                 <label class="custom-control-label" for="customCheck">Recordarme</label>
                                             </div>
                                         </div>
-                                                <button type="submit" class="btn btn-primary">
+                                                <button type="submit" class="btn btn-success">
                                                     Iniciar Sesión
                                                 </button>
                                     </form>

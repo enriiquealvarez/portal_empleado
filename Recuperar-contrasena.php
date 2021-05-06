@@ -54,7 +54,7 @@
                                     id="exampleInputEmail" aria-describedby="emailHelp"
                                     placeholder="Ingresar correo...">
                             </div>
-                            <button type="submit"class="btn btn-primary btn-user btn-block">
+                            <button type="submit"class="btn btn-success btn-user btn-block">
                                 Recuperar contraseña
                             </button>
                         </form>

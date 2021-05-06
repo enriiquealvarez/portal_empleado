@@ -95,14 +95,15 @@ registro();
                                         </div>
                                         <div class="form-group">
                                         <input type="fk_enlace" class="form-control form-control-user"
-                                            name="fk_enlace"  placeholder="Enlace (lo consigues en el área de RH)">
+                                            name="fk_enlace"  placeholder="Enlace">
                                         </div>
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-success">
                                                     Registrarse
                                         </button>
-                                        <button type="submit" class="btn btn-danger" >
-                                                    Cancelar
+                                        <button type="reset" class="btn btn-danger" >
+                                                    Borrar Información
                                         </button>
+                                        
                                     </form>
 
                                 
