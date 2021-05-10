@@ -67,9 +67,6 @@ registro();
                                         <h2 class="h5 text-gray-800 mb-4">Bienvenido al Portal del Empleado  Registro de Empleado</h2>
                                     </div>
                                    
-                                    
-                                  
-                                
                                     <!--MANDAMOS LOS DATOS POR POST AL SERVIDOR PARA SER VALIDADOS-->
                                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                     <div class="form-group">
@@ -90,7 +87,7 @@ registro();
                                              placeholder="Correo Electrónico">
                                         </div>
                                         <div class="form-group">
-                                        <input type="contrasena" class="form-control form-control-user"
+                                        <input type="password" class="form-control form-control-user"
                                             name="contrasena"  placeholder="Contraseña">
                                         </div>
                                         <div class="form-group">
