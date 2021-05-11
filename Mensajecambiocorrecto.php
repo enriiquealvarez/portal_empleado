@@ -44,9 +44,9 @@
                     <div class="card-body">
                    
                         <div class="text-center">
-                            <div class="alert alert-success"><ul>';
+                            <div class="alert alert-success"><ul>
 ; 
-                            <h1 class="h4 text-gray-900 mb-2">La contraseña se cambio correctamente</h1>
+                            <h1 class="h4 text-gray-900 mb-2">La contraseña se cambió correctamente</h1>
                            
                                     </ul></div>
                             <p class="mb-4">Ingresa al sistema con tu nueva contraseña</p>

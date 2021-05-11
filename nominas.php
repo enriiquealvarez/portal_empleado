@@ -477,6 +477,10 @@
                     <a class="nav-link" href="http://declaraciones/auth/MTIxLTEyMWRhZG0mJS0zLTQ="> 
                 <?php
                 break;
+                case 122:?>
+                    <a class="nav-link" href="http://declaraciones/auth/MTIyLTEyMmRhZG0mJS0zLTQ="> 
+                <?php
+                break;
                 /*case 123:?>
                     <a class="nav-link" href="http://declaraciones/auth/MTIzLTEyM2RhZG0mJS0zLTQ="> 
                 <?php
@@ -505,10 +509,15 @@
                     <a class="nav-link" href="http://declaraciones/auth/MTI5LTEyOWRhZG0mJS0zLTQ="> 
                 <?php
                 break;
-                case 122:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTIyLTEyMmRhZG0mJS0zLTQ="> 
+                case 130:?>
+                    <a class="nav-link" href="http://declaraciones/auth/MTMwLTEzMGRhZG0mJS0zLTQ="> 
                 <?php
                 break;
+                case 131:?>
+                    <a class="nav-link" href="http://declaraciones/auth/MTMxLTEzMWRhZG0mJS0zLTQ="> 
+                <?php
+                break;
+
                 }
                 ?>
 
