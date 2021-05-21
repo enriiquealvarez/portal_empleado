@@ -50,7 +50,11 @@
         $EnlaceEmpleado= $ResultadosEmpleado['fk_empleado'];
         $RFCEmpleado= $ResultadosEmpleado['emp_rfc'];
     }
-    ?>
+
+    $sqlreporte= "SELECT u.id, u.link As Enlace, CONVERT(CONCAT(u.nombre, ' ',u.paterno, ' ',u.materno) USING utf8) AS Empleado, IF(s.closed=2, 'Terminada', 'Pendiente') As Estado
+    FROM users u
+    INNER JOIN statements s ON u.id=s.user_id ORDER BY s.closed DESC";
+?>
 
 <!DOCTYPE html>
 
@@ -523,7 +527,7 @@
                     <span>Declaraciones</span></a>
                 </li>
                 <?php
-                    if ($EnlaceEmpleado== 122 OR $EnlaceEmpleado==48 OR $EnlaceEmpleado==51 OR $EnlaceEmpleado==52 )
+                    if ($EnlaceEmpleado== 122 OR $EnlaceEmpleado==48 OR $EnlaceEmpleado==52 )
                     {
                     ?>
                     <li class="nav-item active">
@@ -609,57 +613,44 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <form class="form-horizontal" action="descargaxml.php" name="form" method="POST">
+                            <form class="form-horizontal" action="permisosuser.php" name="form" method="POST">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>NOMBRE</th>
-                                            <th>FECHA DE TIMBRADO</th>
-                                            <th>CONCEPTO DE NÓMINA</th>
-                                            <th>MENSAJE</th>
-                                            <th>XML</th>
-                                            <th>PDF</th>
+                                            <th>ENLACE</th>
+                                            <th>EMPLEADO</th>
+                                            <th>ESTADO</th>
+                                            <th>ACCIONES</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                            <th>NOMBRE</th>
-                                            <th>FECHA DE TIMBRADO</th>
-                                            <th>CONCEPTO DE NÓMINA</th>
-                                            <th>MENSAJE</th>
-                                            <th>XML</th>
-                                            <th>PDF</th>
+                                            <th>ENLACE</th>
+                                            <th>EMPLEADO</th>
+                                            <th>ESTADO</th>
+                                            <th>ACCIONES</th>
+
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    <?php $resultado = $mysqli->query($sql); ?>
-                                        <?php while($row = $resultado->fetch_assoc()){ ?>
+                                    <?php $reporte = $mysqlilocal->query($sqlreporte); ?>
+                                        <?php while($row = $reporte->fetch_assoc()){ ?>
                                             <tr>
-                                                    <td><?php echo $row['empleado'] ?></td>
-                                                    <td><?php echo $row['cfdi_fecha_timbrado']?></td>
-                                                    <td><?php echo $row['nom_concepto']?></td>
-                                                    <td><?php echo $row['cfdi_mensaje']?></td>
-
-                                                    
+                                                    <td><?php echo $row['Enlace'] ?></td>
+                                                    <td><?php echo $row['Empleado']?></td>
+                                                    <td><?php echo $row['Estado']?></td>
                                                     <td>
-                                                        <button type="submit" name="descargamxl" value="<?php echo $row['id_cfdi']?>">
-                                                            <img src='media/xml.png' width="40" height="40" >
-                                                        </button>
-                                                    </td>
-                                                    <td> <!--Cambiando icono pdf.png-->
-                                                        <button type="submit" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
-                                                             <img src='media/pdf.png' width="40" height="40" >
-                                                        </button>
+                                                        <button type="submit" class="btn float-right login_btn" name="BtnRecuperar" value="<?php echo $row['Enlace'] ?>">
+                                                        Enviar
                                                     </td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php 
+                                            } ?>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
+                            </form>
+                         </div>
                     </div>
-
-                </div>
                 <!-- /.container-fluid -->
 
             </div>

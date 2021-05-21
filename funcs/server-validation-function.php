@@ -44,5 +44,4 @@ function validar($fields){
 
     return $errores;
 }
-
 ?>
