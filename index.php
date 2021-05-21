@@ -105,5 +105,13 @@
 		</div>
 	</div>
 </div>
+
+<footer class="navbar-dark text-center bg-dark fixed-bottom">
+  <!-- Copyright -->
+  <div class="navbar-text">Tribunal Administrativo del Poder Judicial del Estado de Chiapas | Todos los Derechos Reservados | Blvd. Belisario Domínguez No. 1713, Col. Xamaipak, Tuxtla Gutiérrez, Chiapas.
+    <a class="text-white" href="https://www.tachiapas.gob.mx/">www.tachiapas.gob.mx</a>
+  </div>
+</footer>
+
 </body>
 </html>
