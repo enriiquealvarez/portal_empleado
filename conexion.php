@@ -8,5 +8,4 @@
         echo 'Conexión Fallida: ', mysqli_connect_error();
         exit();
     }
-
 ?>
