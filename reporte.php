@@ -641,7 +641,7 @@
                                                     <td><?php echo $row['Estado']?></td>
                                                     <td>
                                                         <button type="submit" class="btn float-right login_btn" name="BtnRecuperar" value="<?php echo $row['Enlace'] ?>">
-                                                        Enviar
+                                                        editar
                                                     </td>
                                             </tr>
                                             <?php 
