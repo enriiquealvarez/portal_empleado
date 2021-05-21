@@ -49,6 +49,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" type="image/x-icon" href="media/TA PJECHIS.ico" />
+	
 	<title>Portal del Empleado</title>
    <!--Made with love by Mutiullah Samim -->
    
