@@ -1,8 +1,9 @@
 <?php
-
     //Icluir las librerias, clases y documentos php
     session_start();
-    $title='Portal del Empleado | Reportes';
+    $title='Reportes';
+
+    require_once('top.php');
     require_once('conexion.php');
     require_once('Clases/DatosDelEmpleado.php');
     require_once('menu.php');
