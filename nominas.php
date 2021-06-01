@@ -3,24 +3,17 @@
     require_once('conexion.php');
     require_once('menu.php');
 
-    $enlace = $_SESSION['fk_enlace'];
-
     //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
     if ($_SESSION['tipo_usuario']==1)
     {
         //Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
         $objDatosEmpleado = new DatosDelEmpleado();
         $objDatosEmpleado-> DatosTodosLosEmpleados();
-
     }
-    
     else if($_SESSION['tipo_usuario']==2)
     {
         $objDatosEmpleado = new DatosDelEmpleado();
-        $objDatosEmpleado->DatosEmpleadoNominas($_SESSION['fk_enlace'];);
-        $NombreEmpleado= $ResultadosEmpleado['empleado'];
-        $EnlaceEmpleado= $ResultadosEmpleado['fk_empleado'];
-        $RFCEmpleado= $ResultadosEmpleado['emp_rfc'];
+        $objDatosEmpleado->DatosEmpleadoNominas($_SESSION['fk_enlace']);
     }
     ?>
 
