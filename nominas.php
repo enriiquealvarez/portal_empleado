@@ -3,32 +3,17 @@
     require_once('conexion.php');
     require_once('menu.php');
 
-    $tipo_usuario =$_SESSION['tipo_usuario'];
     $enlace = $_SESSION['fk_enlace'];
 
-
-    
-    //Validación para comprobar si es un Tipo_Usuario =1 (admin), de lo contrario si es un Tipo_Usuario=2 (usuario)
-    if($tipo_usuario==1){
-        $where="WHERE fk_empleado=$enlace";
-    }else if ($tipo_usuario==2){
-    $where = "WHERE fk_empleado=$enlace";
-    }
-    
     //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
-    if ($tipo_usuario==1){
-        $sql= "SELECT id_cfdi, emp_rfc, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
-        AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
-        INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
-        INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0";
-
-        $resultado = $mysqli->query($sql);
-        $ResultadosEmpleado = $resultado->fetch_assoc();
-
-        $NombreEmpleado= $ResultadosEmpleado['empleado'];
-        $EnlaceEmpleado= $ResultadosEmpleado['fk_empleado'];
-        $RFCEmpleado= $ResultadosEmpleado['emp_rfc'];
-
+    if ($_SESSION['tipo_usuario']==1)
+    {
+        //Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
+        $objDatosEmpleado = new DatosDelEmpleado();
+        $objDatosEmpleado->DatosTodosLosEmpleados();
+        $NombreEmpleado=$objDatosEmpleado->NombreEmpleado;
+        $EnlaceEmpleado=$objDatosEmpleado->EnlaceEmpleado;
+        $RFCEmpleado=$objDatosEmpleado->FCEmpleado;
     }
     
     else if($tipo_usuario==2){
@@ -64,7 +49,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <?php if($tipo_usuario==1)
+                                            <?php if($_SESSION['tipo_usuario']==1)
                                             {?>
                                                 <th>NOMBRE</th>
                                             <?php
@@ -79,7 +64,7 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                        <?php if($tipo_usuario==1)
+                                        <?php if($_SESSION['tipo_usuario']==1)
                                             {?>
                                                 <th>NOMBRE</th>
                                             <?php
@@ -93,8 +78,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    <?php $resultado = $mysqli->query($sql); ?>
-                                        <?php while($row = $resultado->fetch_assoc()){ ?>
+                                        <?php while($objDatosEmpleado->resultadoArreglo){ ?>
                                             <tr>
                                             <?php if($tipo_usuario==1)
                                             {?>
