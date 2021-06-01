@@ -1,9 +1,6 @@
 <?php
 	$title= 'Inicio';
-
-	require_once('top.php');
-	require_once('Clases/DatosDelEmpleado.php');
-	
+	require_once('Clases/DatosDelEmpleado.php');	
     if($_POST)
 	{        
 		//Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
@@ -28,7 +25,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>      
 <link rel="stylesheet" href="plugins/sweetAlert2/sweetalert2.min.css">  
 <link rel="stylesheet" href="plugins/animate.css/animate.css">  
-
+<?php require_once('top.php');?>
 
 <!DOCTYPE html>
 <html>
@@ -62,7 +59,7 @@
 						<input type="checkbox">Recordar mis Datos
 					</div>
 					<div class="form-group">
-						<input id="Login" type="submit" value="Entrar" class="btn float-right login_btn">
+						<input name="Entrar" type="submit" value="Entrar" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
