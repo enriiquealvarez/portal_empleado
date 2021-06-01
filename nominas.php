@@ -1,19 +1,12 @@
 <?php
-
     session_start();
-    require 'conexion.php';
-    if(!isset($_SESSION['id'])){
-        header("Location: index.php");
-    }
+    require_once('conexion.php');
+    require_once('menu.php');
 
     $tipo_usuario =$_SESSION['tipo_usuario'];
-    $id = $_SESSION['id'];
     $enlace = $_SESSION['fk_enlace'];
 
 
-    if(!isset($_SESSION['id'])){
-        header("Location: index.php");
-    }
     
     //Validación para comprobar si es un Tipo_Usuario =1 (admin), de lo contrario si es un Tipo_Usuario=2 (usuario)
     if($tipo_usuario==1){
@@ -52,548 +45,6 @@
     }
     ?>
 
-<!DOCTYPE html>
-
-<html lang="es">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Portal del Empleado</title>
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #6c2d43;" id="accordionSidebar">
-
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-
-                </div>
-                <div class="sidebar-brand-text mx-3">Portal del Empleado</div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="nominas.php">
-                    <i class="fa fa-table"></i>
-                    <span>Nóminas</span></a>
-            </li>
-              <!-- CONTROL DE TOKEN PARA LINK DECLARACIONES -->
-              <li class="nav-item active">
-
-                <?php switch ($enlace) {
-                case 1:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MS0xZGFkbSYlLTMtNA==">
-                <?php
-                break;
-
-                case 2:?>
-                    <a class="nav-link" href="http://declaraciones/auth/Mi0yZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-
-                case 4:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NC00ZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-
-                case 5:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NS01ZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-
-                case 6:?>
-                    <a class="nav-link" href="http://declaraciones/auth/Ni02ZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-
-                case 7:?>
-                    <a class="nav-link" href="http://declaraciones/auth/Ny03ZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-
-                case 8:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OC04ZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-
-                case 9:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OS05ZGFkbSYlLTMtNA=="> 
-                <?php
-                break;
-                case 10:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTAtMTBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 11:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTEtMTFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 12:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTItMTJkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 13:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTMtMTNkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 14:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTQtMTRkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 15:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTUtMTVkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 16:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTYtMTZkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 17:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTctMTdkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 18:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTgtMThkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 19:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTktMTlkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 20:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjAtMjBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 21:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjEtMjFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 23:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjMtMjNkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 24:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjQtMjRkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 25:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjUtMjVkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 27:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjctMjdkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 28:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjgtMjhkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 29:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MjktMjlkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 30:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzAtMzBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 31:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzEtMzFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 32:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzItMzJkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 33:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzMtMzNkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 34:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzQtMzRkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 35:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzUtMzVkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 36:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzYtMzZkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 38:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MzgtMzhkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 41:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDEtNDFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 43:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDMtNDNkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 44:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDQtNDRkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 45:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDUtNDVkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 46:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDYtNDZkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 47:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDctNDdkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 48:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDgtNDhkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 49:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NDktNDlkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 50:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NTAtNTBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 51:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NTEtNTFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 52:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NTItNTJkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 63:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NjMtNjNkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 66:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NjYtNjZkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 68:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NjgtNjhkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 70:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzAtNzBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 71:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzEtNzFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 72:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzItNzJkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 73:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzMtNzNkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 74:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzQtNzRkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 75:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzUtNzVkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 76:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzYtNzZkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 78:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzgtNzhkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 79:?>
-                    <a class="nav-link" href="http://declaraciones/auth/NzktNzlkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 80:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODAtODBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 81:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODEtODFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 82:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODItODJkYWRtJiUtMy00">
-                <?php
-                break;
-
-                case 83:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODMtODNkYWRtJiUtMy00"> 
-                <?php
-                break;
-
-                case 84:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODQtODRkYWRtJiUtMy00"> 
-                <?php
-                break;
-
-                case 85:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODUtODVkYWRtJiUtMy00"> 
-                <?php
-                break;
-
-                case 86:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODYtODZkYWRtJiUtMy00"> 
-                <?php
-                break;
-
-                case 87:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODctODdkYWRtJiUtMy00"> 
-                <?php
-                break;
-
-                case 88:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODgtODhkYWRtJiUtMy00"> 
-                <?php
-                break;
-
-                case 89:?>
-                    <a class="nav-link" href="http://declaraciones/auth/ODktODlkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 90:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OTAtOTBkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 91:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OTEtOTFkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 96:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OTYtOTZkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 98:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OTgtOThkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 99:?>
-                    <a class="nav-link" href="http://declaraciones/auth/OTktOTlkYWRtJiUtMy00"> 
-                <?php
-                break;
-                case 100:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTAwLTEwMGRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 101:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTAxLTEwMWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 102:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTAyLTEwMmRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 103:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTAzLTEwM2RhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 105:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTA1LTEwNWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 106:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTA2LTEwNmRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 107:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTA3LTEwN2RhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 108:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTA4LTEwOGRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 109:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTA5LTEwOWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 110:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTEwLTExMGRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 111:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTExLTExMWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 115:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTE1LTExNWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 116:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTE2LTExNmRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 118:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTE4LTExOGRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 119:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTE5LTExOWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                /*case 120:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTIwLTEyMGRhZG0mJS0zLTQ="> 
-                <?php
-                break;*/
-                case 121:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTIxLTEyMWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 122:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTIyLTEyMmRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                /*case 123:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTIzLTEyM2RhZG0mJS0zLTQ="> 
-                <?php
-                break;*/
-                /*case 124:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTI0LTEyNGRhZG0mJS0zLTQ="> 
-                <?php
-                break;*/
-                /*case 125:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTI1LTEyNWRhZG0mJS0zLTQ="> 
-                <?php
-                break;*/
-                /*case 126:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTI2LTEyNmRhZG0mJS0zLTQ="> 
-                <?php
-                break;*/
-                case 127:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTI3LTEyN2RhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                /*case 128:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTI4LTEyOGRhZG0mJS0zLTQ="> 
-                <?php
-                break;*/
-                case 129:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTI5LTEyOWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 130:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTMwLTEzMGRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                case 131:?>
-                    <a class="nav-link" href="http://declaraciones/auth/MTMxLTEzMWRhZG0mJS0zLTQ="> 
-                <?php
-                break;
-                }
-                ?>
-                <i class="fa fa-file"></i>
-                    <span>Declaraciones</span></a>
-                </li>
-                <?php
-                    if ($EnlaceEmpleado== 122 OR $EnlaceEmpleado==48 OR $EnlaceEmpleado==51 OR $EnlaceEmpleado==52 )
-                    {
-                    ?>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="reporte.php">
-                            <i class="fa fa-file"></i>
-                                <span>Reportes</span></a>
-                            </li>
-                    <?php
-                    }
-                ?>
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-
-                <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $NombreEmpleado; ?></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesión
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -613,7 +64,12 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>NOMBRE</th>
+                                            <?php if($tipo_usuario==1)
+                                            {?>
+                                                <th>NOMBRE</th>
+                                            <?php
+                                            } 
+                                            ?>
                                             <th>FECHA DE TIMBRADO</th>
                                             <th>CONCEPTO DE NÓMINA</th>
                                             <th>MENSAJE</th>
@@ -623,7 +79,12 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                            <th>NOMBRE</th>
+                                        <?php if($tipo_usuario==1)
+                                            {?>
+                                                <th>NOMBRE</th>
+                                            <?php
+                                            } 
+                                            ?>
                                             <th>FECHA DE TIMBRADO</th>
                                             <th>CONCEPTO DE NÓMINA</th>
                                             <th>MENSAJE</th>
@@ -635,19 +96,24 @@
                                     <?php $resultado = $mysqli->query($sql); ?>
                                         <?php while($row = $resultado->fetch_assoc()){ ?>
                                             <tr>
+                                            <?php if($tipo_usuario==1)
+                                            {?>
                                                     <td><?php echo $row['empleado'] ?></td>
+                                            <?php
+                                            } 
+                                            ?>
                                                     <td><?php echo $row['cfdi_fecha_timbrado']?></td>
                                                     <td><?php echo $row['nom_concepto']?></td>
                                                     <td><?php echo $row['cfdi_mensaje']?></td>
 
                                                     
                                                     <td>
-                                                        <button type="submit" name="descargamxl" value="<?php echo $row['id_cfdi']?>">
+                                                        <button type="submit" class="btn float-leff login_btn" name="descargamxl" value="<?php echo $row['id_cfdi']?>">
                                                             <img src='media/xml.png' width="40" height="40" >
                                                         </button>
                                                     </td>
                                                     <td> <!--Cambiando icono pdf.png-->
-                                                        <button type="submit" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
+                                                        <button type="submit" class="btn float-leff login_btn" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
                                                              <img src='media/pdf.png' width="40" height="40" >
                                                         </button>
                                                     </td>
@@ -664,7 +130,7 @@
 
             </div>
             <!-- End of Main Content -->
-
+                </div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -700,7 +166,7 @@
                 <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div> 
                 <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="index.php">Cerrar Sesión</a>
+                    <button class="btn btn-primary" type="submit" name="logout" >Cerrar Sesión</button>
                 </div>
             </div>
         </div>

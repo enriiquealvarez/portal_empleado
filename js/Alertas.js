@@ -8,5 +8,5 @@ function Alertas()
         showConfirmButton: false,
         timer: 1500
       })
-      header ('Location: index.php');
+      header ('Location: logout.php');
 }

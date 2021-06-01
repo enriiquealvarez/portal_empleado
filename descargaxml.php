@@ -1,6 +1,4 @@
-
 <?php
-
 require 'conexion.php';
 
     if(isset($_POST['descargamxl']))
@@ -28,10 +26,16 @@ require 'conexion.php';
       $dato=$row['cfdi_pdf_timbrado'];
       
     header("Content-type: application/pdf");
+    header('Content-Disposition: attachment;filename=Nomina.pdf');
    // header('Content-Disposition: attachment; filename="downloaded.pdf"'); //solo para forzar descarga
     //si está e base 64 seria:
-    echo base64_decode($dato); //si usas este, elimina el echo anterior ;-)
+    echo base64_decode($dato);
+    exit;
     }
-
+    else if (isset($_POST['logout'])) 
+    {
+      session_destroy();
+      header("Location: index.php");
+    }
 ?> 
 

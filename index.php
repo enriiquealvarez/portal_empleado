@@ -1,50 +1,30 @@
 <?php
-    require "conexion.php";
-    session_start();
-    if($_POST){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        
-         $sql= "SELECT id, contrasena, tipo_usuario, fk_enlace, correo_electronico FROM empleado WHERE correo_electronico= '$email' ";
-
-        $resultado = $mysqli->query($sql);
-
-        $num = $resultado->num_rows;
-
-        if($num>0){
-            $row=$resultado->fetch_assoc();
-            $contraseña_bd = $row['contrasena'];
-            //contr_c (variable que significa Contraseña de cifrado, la cual con 'sha1' vamos a cifrar para proteger dicha contraseña)
-            $contr_c = sha1($password);
-
-            if($contraseña_bd == $contr_c){
-
-                $_SESSION['id']=$row['id'];
-                $_SESSION['nombre']=$row['nombre'];
-                $_SESSION['apellidos']=$row['apellidos'];
-                $_SESSION['tipo_usuario']=$row['tipo_usuario'];
-                $_SESSION['rfc']=$row['rfc'];
-                $_SESSION['fk_enlace']=$row['fk_enlace'];
-
-                header("Location: nominas.php");
-
-            }else{
-                echo "La contraseña no existe o es incorrecta";
-            }
-
-
-        }else{
-            echo "El Usuario no existe o es incorrecto";
-        }
-    }
-
+	require_once('Clases/DatosDelEmpleado.php');
+    if($_POST)
+	{        
+		//Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
+		$objDatosEmpleado = new DatosDelEmpleado();
+		$objDatosEmpleado->DatosInicoDeSesion($_POST['email'], $_POST['password']); 
+		$objDatosEmpleado->Mensaje;
+		if($objDatosEmpleado->ControlDeRespuesta>0)
+		{
+		?>
+		<div center >
+			<div class="alert alert-danger">
+				<?php echo $objDatosEmpleado->Mensaje?>
+			</div>	
+		<?php
+		}
+	}
 ?>
-
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>      
+<link rel="stylesheet" href="plugins/sweetAlert2/sweetalert2.min.css">  
+<link rel="stylesheet" href="plugins/animate.css/animate.css">  
+
 
 <!DOCTYPE html>
 <html>
@@ -67,11 +47,11 @@
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
+		
 			<div class="card-header">
 				<h3>Iniciar Sesión</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><img src="https://tachiapas.gob.mx/wp-content/uploads/2021/05/logo-circular.png" width="80" height="80" ></i></span>
-				
 				</div>
 			</div>
 			<div class="card-body">
@@ -92,7 +72,7 @@
 						<input type="checkbox">Recordar mis Datos
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Entrar" class="btn float-right login_btn">
+						<input id="Login" type="submit" value="Entrar" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
