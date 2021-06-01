@@ -17,7 +17,7 @@
     else if($_SESSION['tipo_usuario']==2)
     {
         $objDatosEmpleado = new DatosDelEmpleado();
-
+        $objDatosEmpleado->DatosEmpleadoNominas($_SESSION['fk_enlace'];);
         $NombreEmpleado= $ResultadosEmpleado['empleado'];
         $EnlaceEmpleado= $ResultadosEmpleado['fk_empleado'];
         $RFCEmpleado= $ResultadosEmpleado['emp_rfc'];
