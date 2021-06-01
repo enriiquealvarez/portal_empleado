@@ -2,10 +2,12 @@
     
     class DatosDelEmpleado
     {   
-        //Datos generales del empleado a buscar
+        //Datos generales del empleado a buscar para reporte de las declraraciones
         public $EnlaceEmpleado=''; 
         public $NombreEmpleado=''; 
         public $EstadoDeclaracionEmpleado=''; 
+        public $RFCEmpleado='';
+        public $resultadoArreglo='';
 
         //Respuesta de inicio de sesión
         public $ControlDeRespuesta='';
@@ -128,5 +130,39 @@
    
         }
 
+        //Obtener información de todos los trabajadores, Nombre, RFC, XML, Nóminas
+        public function DatosTodosLosEmpleados()
+        {
+            include('conexion.php');
+            $sqlConsultaTodosLosEmpleados= "SELECT id_cfdi, emp_rfc AS RFC, fk_empleado AS Enlace, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
+            AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
+            INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
+            INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0";
+    
+            $resultadoArreglo = $mysqli->query($sqlConsultaTodosLosEmpleados);
+            $ArregloDatosObtenidos= $resultadoArreglo->fetch_assoc();
+            $this->resultadoArreglo= $resultadoArreglo->fetch_assoc();
+
+            $this->EnlaceEmpleado= $ArregloDatosObtenidos['Enlace'];
+            $this->NombreEmpleado= $ArregloDatosObtenidos['Empleado'];
+            $this->RFCEmpleado= $ArregloDatosObtenidos['RFC'];
+        }
+
+        //Obtener información del trabajador que inició sesión, Nombre, RFC, XML, Nóminas
+        public function DatosEmpleadoNominas($enlace)
+        {
+            include('conexion.php');
+            $sql= "SELECT id_cfdi, emp_rfc, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
+            AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
+            INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
+            INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0 AND fk_empleado=$enlace";
+    
+            $resultadoArreglo = $mysqli->query($sql);
+            $ArregloDatosObtenidos= $resultadoArreglo->fetch_assoc();
+
+            $this->EnlaceEmpleado= $ArregloDatosObtenidos['Enlace'];
+            $this->NombreEmpleado= $ArregloDatosObtenidos['Empleado'];
+            $this->RFCEmpleado= $ArregloDatosObtenidos['RFC'];
+        }
     }
 ?>
