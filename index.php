@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> 4cd350e9a0adb5df15ed92f2b6452c19a2eeb401
 	require_once('Clases/DatosDelEmpleado.php');
     if($_POST)
 	{        
