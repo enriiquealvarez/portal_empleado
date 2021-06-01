@@ -36,7 +36,6 @@
 
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 
 <body>
 <div class="container">
@@ -54,19 +53,6 @@
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
-=======
-	<head>
-		<title>Portal del Empleado</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="d-flex justify-content-center h-100">
-				<div class="card">
-					<div class="card-header">
-						<h3>Iniciar Sesión</h3>
-						<div class="d-flex justify-content-end social_icon">
-							<span><img src="https://tachiapas.gob.mx/wp-content/uploads/2021/05/logo-circular.png" width="80" height="80" ></i></span>
->>>>>>> 70110503dad9c458cedefc535e700822c401a8bc
 						</div>
 					</div>
 					<div class="card-body">
