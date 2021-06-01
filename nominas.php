@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $title='Portal del Empleado | Nóminas';
     require_once('conexion.php');
     require_once('menu.php');
 
