@@ -1,8 +1,4 @@
-<?php 
-$title= 'Recuperar Contraseña';
 
-require_once('top.php'); 
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,6 +10,11 @@ require_once('top.php');
 
 <!DOCTYPE html>
 <html>
+<?php 
+$title= 'Recuperar Contraseña';
+
+require_once('top.php'); 
+?>
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">

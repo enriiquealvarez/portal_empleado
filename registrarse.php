@@ -1,6 +1,7 @@
 <?PHP
 session_start();
 $title='Registrarse';
+
 require_once('top.php');
 require_once('func_registro.php');
 require_once('funcs/token-function.php');

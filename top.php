@@ -3,7 +3,7 @@
 <head>
 	<link rel="icon" type="image/x-icon" href="media/TA PJECHIS.ico" />
 	
-	<title><?php echo 'Portal del Empleado | '.$title; ?></title>
+	<title><?php echo 'Portal del Empleado | '.$title;?></title>
    <!--Made with love by Mutiullah Samim -->
    
 	<!--Bootsrap 4 CDN-->

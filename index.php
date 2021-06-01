@@ -3,6 +3,7 @@
 
 	require_once('top.php');
 	require_once('Clases/DatosDelEmpleado.php');
+	
     if($_POST)
 	{        
 		//Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
