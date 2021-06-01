@@ -1,46 +1,16 @@
 <?php
     require_once('conexion.php');
     require_once('Clases/DatosDelEmpleado.php');
+    $objDatosEmpleado = new DatosDelEmpleado();
 
-    $tipo_usuario =$_SESSION['tipo_usuario'];
-    $id = $_SESSION['id'];
-    $enlace = $_SESSION['fk_enlace'];
-
-
-    //Validación para comprobar si es un Tipo_Usuario =1 (admin), de lo contrario si es un Tipo_Usuario=2 (usuario)
-    if($tipo_usuario==1){
-        $where="WHERE fk_empleado=$enlace";
-    }else if ($tipo_usuario==2){
-    $where = "WHERE fk_empleado=$enlace";
-    }
-    
     //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
-    if ($tipo_usuario==1){
-        $sql= "SELECT id_cfdi, emp_rfc, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
-        AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
-        INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
-        INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0";
-
-        $resultado = $mysqli->query($sql);
-        $ResultadosEmpleado = $resultado->fetch_assoc();
-
-        $NombreEmpleado= $ResultadosEmpleado['empleado'];
-        $EnlaceEmpleado= $ResultadosEmpleado['fk_empleado'];
-        $RFCEmpleado= $ResultadosEmpleado['emp_rfc'];
-
+    if ($_SESSION['tipo_usuario']==1)
+    {        
+        $objDatosEmpleado-> DatosTodosLosEmpleados();
     }
-    
-    else if($tipo_usuario==2){
-        $sql= "SELECT id_cfdi, emp_rfc, fk_empleado, CONVERT(CONCAT(emp_nombres, ' ', emp_paterno, ' ', emp_materno) USING utf8) 
-        AS empleado, cfdi_fecha_timbrado, cfdi_mensaje, nom_concepto, cfdi_xml_cfdi, cfdi_pdf_timbrado FROM pri_cfdi 
-        INNER JOIN pri_nomina  ON fk_nomina = id_nom_nomina 
-        INNER JOIN pri_empleado ON fk_empleado = id_emp_empleado where cfdi_cancelado=0 AND fk_empleado=$enlace";
-        $resultado = $mysqli->query($sql);
-        $ResultadosEmpleado = $resultado->fetch_assoc();
-
-        $NombreEmpleado= $ResultadosEmpleado['empleado'];
-        $EnlaceEmpleado= $ResultadosEmpleado['fk_empleado'];
-        $RFCEmpleado= $ResultadosEmpleado['emp_rfc'];
+    else if($_SESSION['tipo_usuario']==2)
+    {
+        $objDatosEmpleado->DatosEmpleadoNominas($_SESSION['fk_enlace']);
     }
 
     //Se obtiene los datos del empleado, para saber el estado de la declaracion (reporte)
@@ -48,11 +18,8 @@
     FROM users u
     INNER JOIN statements s ON u.id=s.user_id ORDER BY s.closed DESC";
 
-    //Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
-    $objDatosEmpleado = new DatosDelEmpleado();
-
     //Se accede a las funciones de la clase PermisosEmpleado para obtener los permsiso del sistema
-    $objDatosEmpleado-> PermisosUsoSistema($enlace);
+    $objDatosEmpleado-> PermisosUsoSistema($_SESSION['fk_enlace']);
 
 ?>
 
@@ -118,7 +85,7 @@
               <?php
                 if($objDatosEmpleado->Sistema2==1)
                 {?>
-                    <?php switch ($enlace) {
+                    <?php switch ($_SESSION['fk_enlace']) {
                     case 1:?>
                         <a class="nav-link" href="http://declaraciones/auth/MS0xZGFkbSYlLTMtNA==">
                     <?php
@@ -594,7 +561,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $NombreEmpleado; ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $objDatosEmpleado->NombreEmpleado; ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>

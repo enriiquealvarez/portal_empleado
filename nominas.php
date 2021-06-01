@@ -1,129 +1,97 @@
 <?php
     session_start();
-    require_once('conexion.php');
     require_once('menu.php');
+?>
 
-    //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
-    if ($_SESSION['tipo_usuario']==1)
-    {
-        //Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
-        $objDatosEmpleado = new DatosDelEmpleado();
-        $objDatosEmpleado-> DatosTodosLosEmpleados();
-    }
-    else if($_SESSION['tipo_usuario']==2)
-    {
-        $objDatosEmpleado = new DatosDelEmpleado();
-        $objDatosEmpleado->DatosEmpleadoNominas($_SESSION['fk_enlace']);
-    }
-    ?>
-
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
-                    
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary"> RFC: <?php echo $objDatosEmpleado->RFCEmpleado; ?> | ENLACE: <?php echo$objDatosEmpleado->EnlaceEmpleado; ?></h6>
-
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                            <form class="form-horizontal" action="descargaxml.php" name="form" method="POST">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <?php if($tipo_usuario==1)
-                                            {?>
-                                                <th>NOMBRE</th>
-                                            <?php
-                                            } 
-                                            ?>
-                                            <th>FECHA DE TIMBRADO</th>
-                                            <th>CONCEPTO DE NÓMINA</th>
-                                            <th>MENSAJE</th>
-                                            <th>XML</th>
-                                            <th>PDF</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <?php if($tipo_usuario==1)
-                                            {?>
-                                                <th>NOMBRE</th>
-                                            <?php
-                                            } 
-                                            ?>
-                                            <th>FECHA DE TIMBRADO</th>
-                                            <th>CONCEPTO DE NÓMINA</th>
-                                            <th>MENSAJE</th>
-                                            <th>XML</th>
-                                            <th>PDF</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <?php $resultado = $mysqli->query($sql); ?>
-                                        <?php while($row = $resultado->fetch_assoc()){ ?>
-                                            <tr>
-                                            <?php if($tipo_usuario==1)
-                                            {?>
-                                                    <td><?php echo $row['empleado'] ?></td>
-                                            <?php
-                                            } 
-                                            ?>
-                                                    <td><?php echo $row['cfdi_fecha_timbrado']?></td>
-                                                    <td><?php echo $row['nom_concepto']?></td>
-                                                    <td><?php echo $row['cfdi_mensaje']?></td>
-
-                                                    
-                                                    <td>
-                                                        <button type="submit" class="btn float-leff login_btn" name="descargamxl" value="<?php echo $row['id_cfdi']?>">
-                                                            <img src='media/xml.png' width="40" height="40" >
-                                                        </button>
-                                                    </td>
-                                                    <td> <!--Cambiando icono pdf.png-->
-                                                        <button type="submit" class="btn float-leff login_btn" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
-                                                             <img src='media/pdf.png' width="40" height="40" >
-                                                        </button>
-                                                    </td>
-                                            </tr>
-                                            <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
+    <!-- Contenido -->
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Tribunal Administrativo del Poder Judicial del Estado de Chiapas</h1>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"> RFC: <?php echo $objDatosEmpleado->RFCEmpleado; ?> | ENLACE: <?php echo$objDatosEmpleado->EnlaceEmpleado; ?></h6>
             </div>
-            <!-- End of Main Content -->
-                </div>
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Tribunal Administrativo del Poder Judicial del Estado de Chiapas &copy; Todos los Derechos Reservados</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <div class="card-body">
+                <div class="table-responsive">
+                <form class="form-horizontal" action="descargaxml.php" name="form" method="POST">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <?php if($_SESSION['tipo_usuario']==1)
+                                {?>
+                                    <th>NOMBRE</th>
+                                <?php
+                                } 
+                                ?>
+                                <th>FECHA DE TIMBRADO</th>
+                                <th>CONCEPTO DE NÓMINA</th>
+                                <th>MENSAJE</th>
+                                <th>XML</th>
+                                <th>PDF</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <?php if($_SESSION['tipo_usuario']==1)
+                                {?>
+                                    <th>NOMBRE</th>
+                                <?php
+                                } 
+                                ?>
+                                <th>FECHA DE TIMBRADO</th>
+                                <th>CONCEPTO DE NÓMINA</th>
+                                <th>MENSAJE</th>
+                                <th>XML</th>
+                                <th>PDF</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <?php while($row = $objDatosEmpleado->resultadoArreglo->fetch_assoc()){ ?>
+                                <tr>
+                                <?php if($_SESSION['tipo_usuario']==1)
+                                {?>
+                                        <td><?php echo $row['empleado'] ?></td>
+                                <?php
+                                } 
+                                ?>
+                                        <td><?php echo $row['cfdi_fecha_timbrado']?></td>
+                                        <td><?php echo $row['nom_concepto']?></td>
+                                        <td><?php echo $row['cfdi_mensaje']?></td>
 
+                                        
+                                        <td>
+                                            <button type="submit" class="btn float-leff login_btn" name="descargamxl" value="<?php echo $row['id_cfdi']?>">
+                                                <img src='media/xml.png' width="40" height="40" >
+                                            </button>
+                                        </td>
+                                        <td> <!--Cambiando icono pdf.png-->
+                                            <button type="submit" class="btn float-leff login_btn" name="descargapdf" value="<?php echo $row['id_cfdi']?>">
+                                                    <img src='media/pdf.png' width="40" height="40" >
+                                            </button>
+                                        </td>
+                                </tr>
+                                <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!-- End of Content Wrapper -->
+    </div>     
+ </div>
+ </div>
 
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Tribunal Administrativo del Poder Judicial del Estado de Chiapas &copy; Todos los Derechos Reservados</span>
+            </div>
+        </div>
+    </footer>
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
+    </div>
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
