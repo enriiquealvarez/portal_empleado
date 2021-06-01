@@ -1,9 +1,5 @@
 <?php
-
-	$title='Portal del Empleado | Inicio';
 	require_once('Clases/DatosDelEmpleado.php');
-	require_once('top.php');
-
     if($_POST)
 	{        
 		//Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
@@ -22,21 +18,31 @@
 	}
 ?>
 
- <!--Inico del HTML -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>      
 <link rel="stylesheet" href="plugins/sweetAlert2/sweetalert2.min.css">  
 <link rel="stylesheet" href="plugins/animate.css/animate.css">  
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-<link rel="icon" type="image/x-icon" href="media/TA PJECHIS.ico" />
+
 
 <!DOCTYPE html>
 <html>
+<head>
+	<link rel="icon" type="image/x-icon" href="media/TA PJECHIS.ico" />
+	
+	<title>Portal del Empleado</title>
+   <!--Made with love by Mutiullah Samim -->
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
@@ -54,47 +60,40 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
+                        <input type="text" class="form-control" name= "email" type ="text" aria-describedby="emailHelp" placeholder="Correo" required>
 					</div>
-					<div class="card-body">
-					<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-						<div class="input-group form-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" class="form-control" name= "email" type ="text" aria-describedby="emailHelp" placeholder="Correo" required>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<div class="input-group form-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" class="form-control" name= "password" type ="password" placeholder="Contraseña" required>
-						</div>
-						<div class="row align-items-center remember">
-							<input type="checkbox">Recordar mis Datos
-						</div>
-						<div class="form-group">
-							<input id="Login" type="submit" value="Entrar" class="btn float-right login_btn">
-						</div>
-					</form>
+						<input type="password" class="form-control" name= "password" type ="password" placeholder="Contraseña" required>
 					</div>
-					<div class="card-footer">
-						<div class="d-flex justify-content-center links">
-							¿Aún no estás registrado?<a href="registrarse.php">Registrarse</a>
-						</div>
-						<div class="d-flex justify-content-center">
-							<a href="Recuperar-contrasena.php">¿Olvidaste tu contraseña?</a>
-						</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Recordar mis Datos
 					</div>
+					<div class="form-group">
+						<input id="Login" type="submit" value="Entrar" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					¿Aún no estás registrado?<a href="registrarse.php">Registrarse</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="Recuperar-contrasena.php">¿Olvidaste tu contraseña?</a>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
 
-		<footer class="navbar-dark text-center bg-dark fixed-bottom">
-			<!-- Copyright -->
-			<div class="navbar-text">Tribunal Administrativo del Poder Judicial del Estado de Chiapas | Todos los Derechos Reservados | Blvd. Belisario Domínguez No. 1713, Col. Xamaipak, Tuxtla Gutiérrez, Chiapas.
-				<a class="text-white" href="https://www.tachiapas.gob.mx/">www.tachiapas.gob.mx</a>
-			</div>
-		</footer>
+<footer class="navbar-dark text-center bg-dark fixed-bottom">
+  <!-- Copyright -->
+  <div class="navbar-text">Tribunal Administrativo del Poder Judicial del Estado de Chiapas | Todos los Derechos Reservados | Blvd. Belisario Domínguez No. 1713, Col. Xamaipak, Tuxtla Gutiérrez, Chiapas.
+    <a class="text-white" href="https://www.tachiapas.gob.mx/">www.tachiapas.gob.mx</a>
+  </div>
+</footer>
 
-	</body>
+</body>
 </html>
