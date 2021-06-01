@@ -1,9 +1,6 @@
 <?php
 
-	$title='Portal del Empleado | Inicio';
 	require_once('Clases/DatosDelEmpleado.php');
-	require_once('top.php');
-
     if($_POST)
 	{        
 		//Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
