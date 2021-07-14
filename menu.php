@@ -1,6 +1,7 @@
 <?php
     require_once('conexion.php');
     require_once('Clases/DatosDelEmpleado.php');
+    require_once('top.php');
     $objDatosEmpleado = new DatosDelEmpleado();
 
     //Validación para obtener todos los datos siendo ADMIN o individuales siendo USUARIO
@@ -20,67 +21,27 @@
 
     //Se accede a las funciones de la clase PermisosEmpleado para obtener los permsiso del sistema
     $objDatosEmpleado-> PermisosUsoSistema($_SESSION['fk_enlace']);
-
+    $objDatosEmpleado-> DatosResguardoEquiposInformaticos($_SESSION['fk_enlace']);
 ?>
 
-<!DOCTYPE html>
-
-<html lang="es">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Portal del Empleado</title>
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-</head>
-
 <body id="page-top">
-
-    <!-- Page Wrapper -->
     <div id="wrapper">
-
-        <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #6c2d43;" id="accordionSidebar">
-
-
-            <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-
-                </div>
+                <div class="sidebar-brand-icon rotate-n-15"></div>
                 <div class="sidebar-brand-text mx-3">Portal del Empleado</div>
             </a>
 
-            <!-- Divider -->
+            <!-- Permiso para ver -->
             <hr class="sidebar-divider">
-            <?php
-                if($objDatosEmpleado->Sistema1==1)
-                {?>
-                    <li class="nav-item active">
+                <li class="nav-item active">
                     <a class="nav-link" href="nominas.php">
                         <i class="fa fa-table"></i>
-                        <span>Nóminas</span></a>
-                    </li>
-                <?php
-                }
-            ?>
-            <!-- Nav Item - Tables -->
+                        <span>Nóminas</span>
+                    </a>
+                </li>
             
-              <!-- CONTROL DE TOKEN PARA LINK DECLARACIONES -->
+              <!-- CONTROL DE TOKEN PARA LINK DECLARACIONES, SE CONTROLA MEDIANTE (1) SI TIENE PERMISO PARA VER EL SISTEMA, (2) POR MEDIO DEL ENLANCE SE DIRIGE SI LINK -->
               <li class="nav-item active">
               <?php
                 if($objDatosEmpleado->Sistema2==1)
@@ -513,51 +474,38 @@
                     ?>
                     <li class="nav-item active">
                         <a class="nav-link" href="reporte.php">
-                            <i class="fa fa-file"></i>
+                            <i class="fa fa-table"></i>
                                 <span>Reportes</span></a>
                             </li>
                     <?php
                     }
                 ?>
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+                <li class="nav-item active">
+                    <a class="nav-link" href="resguardoequipos.php">
+                        <i class="fa fa-table"></i>
+                            <span>Resguardo equipos informáticos</span>
+                    </a>
+                </li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
+            <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
         </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
             <div id="content">
-
-                <!-- Topbar -->
-
                 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
                     <form class="form-inline">
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
                     </form>
-
-                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-
-                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -565,7 +513,6 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="nominas.php" data-toggle="modal" data-target="#logoutModal">
@@ -574,20 +521,7 @@
                                 </a>
                             </div>
                         </li>
-
                     </ul>
-
                 </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-              
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
+            </div>
+            

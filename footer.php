@@ -1,8 +1,16 @@
-</div>
-<a class="scroll-to-top rounded" href="#page-top">
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Tribunal Administrativo del Poder Judicial del Estado de Chiapas &copy; Todos los Derechos Reservados</span>
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -17,7 +25,7 @@
                 <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div> 
                 <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="index.php">Cerrar Sesión</a>
+                    <button class="btn btn-primary" type="submit" name="logout" >Cerrar Sesión</button>
                 </div>
             </div>
         </div>
