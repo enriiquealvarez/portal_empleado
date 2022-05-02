@@ -1,40 +1,10 @@
-<?php
- 
-echo "<div>";
- echo "<marquee behavior='Scroll' class='none'  behavior='alternate'>";
-
- echo "</marquee>";
-echo "</div>";
-?>
-
-<?php
-	$title= 'Inicio';
-	require_once('Clases/DatosDelEmpleado.php');	
-    if($_POST)
-	{        
-		//Se accede a las funciones de la clase DatosDelEmpleado para obtener su información
-		$objDatosEmpleado = new DatosDelEmpleado();
-		$objDatosEmpleado->DatosInicoDeSesion($_POST['email'], $_POST['password']); 
-		$objDatosEmpleado->Mensaje;
-		if($objDatosEmpleado->ControlDeRespuesta>0)
-		{
-		?>
-		<div center >
-			<div class="alert alert-danger">
-				<?php echo $objDatosEmpleado->Mensaje?>
-			</div>	
-		<?php
-		}
-	}
-?>
-
-
  
 <?php require_once('top.php');?>
 
 <marquee bgcolor="#b59769" height="50" width="100%" scrolldelay="100" scrollamount="10" direction="left" loop="infinite">
 <FONT FACE=arial COLOR=white SIZE=6>	
 MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás contar con tu firma electrónica. En caso de no contar con ella, acude al Área de Informática. 
+¡Recuerda que es importante, cumplir con esta obligación!
 </font>
 </marquee>
 
