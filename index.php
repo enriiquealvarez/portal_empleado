@@ -1,4 +1,13 @@
 <?php
+ 
+echo "<div>";
+ echo "<marquee behavior='Scroll' class='none'  behavior='alternate'>";
+
+ echo "</marquee>";
+echo "</div>";
+?>
+
+<?php
 	$title= 'Inicio';
 	require_once('Clases/DatosDelEmpleado.php');	
     if($_POST)
@@ -18,8 +27,17 @@
 		}
 	}
 ?>
+
+
  
 <?php require_once('top.php');?>
+
+<marquee bgcolor="#b59769" height="50" width="100%" scrolldelay="100" scrollamount="10" direction="left" loop="infinite">
+<FONT FACE=arial COLOR=white SIZE=6>	
+MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás contar con tu firma electrónica. En caso de no contar con ella, acude al Área de Informática. 
+</font>
+</marquee>
+
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
