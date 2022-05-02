@@ -58,7 +58,7 @@
 					¿Aún no estás registrado?<a href="registrarse.php">Registrarse</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="Recuperar-contrasena.php">¿Olvidaste tu contraseña??</a>
+					<a href="Recuperar-contrasena.php">¿Olvidaste tu contraseña?</a>
 				</div>
 			</div>
 		</div>
