@@ -8,6 +8,7 @@ MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás conta
 </font>
 </marquee>
 
+
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
