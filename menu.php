@@ -15,9 +15,11 @@
     }
 
     //Se obtiene los datos del empleado, para saber el estado de la declaracion (reporte)
-    $sqlreporte= "SELECT u.id, u.link As Enlace, CONVERT(CONCAT(u.nombre, ' ',u.paterno, ' ',u.materno) USING utf8) AS Empleado, IF(s.closed=2, 'Terminada', 'Pendiente') As Estado
-    FROM users u
-    INNER JOIN statements s ON u.id=s.user_id ORDER BY s.closed DESC";
+    $sqlreporte= "SELECT u.fk_enlace AS Enlace, CONVERT(CONCAT(e.emp_nombres, ' ',e.emp_paterno, ' ',e.emp_materno) USING utf8) AS Empleado,  IF(u.token_activo=1, u.codigo, '-----') AS Token
+    FROM empleado u
+    INNER JOIN pri_empleado e ON u.fk_enlace=e.id_emp_empleado ORDER BY enlace";
+
+   $sqltoken= "SELECT ID_TOKEN, TOKEN, IF(ACTIVO=1, 'ACTIVO', 'CADUCADO') AS ESTATUS FROM TOKEN";
 
     //Se accede a las funciones de la clase PermisosEmpleado para obtener los permsiso del sistema
     $objDatosEmpleado-> PermisosUsoSistema($_SESSION['fk_enlace']);
@@ -42,6 +44,7 @@
                 </li>
             
               <!-- CONTROL DE TOKEN PARA LINK DECLARACIONES, SE CONTROLA MEDIANTE (1) SI TIENE PERMISO PARA VER EL SISTEMA, (2) POR MEDIO DEL ENLANCE SE DIRIGE SI LINK -->
+              <!-- Se comenta la línea de abajo para evitar que puedan acceder a las declaraciones en lo que se hacen los cambios -->
               <li class="nav-item active">
               <?php
                 if($objDatosEmpleado->Sistema2==1)
@@ -409,42 +412,42 @@
                         <a class="nav-link" href="http://declaraciones/auth/MTE5LTExOWRhZG0mJS0zLTQ="> 
                     <?php
                     break;
-                    /*case 120:?>
+                    case 120:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTIwLTEyMGRhZG0mJS0zLTQ="> 
                     <?php
-                    break;*/
+                    break;
                     case 121:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTIxLTEyMWRhZG0mJS0zLTQ="> 
                     <?php
                     break;
                     case 122:?>
-                        <a class="nav-link" href="http://declaraciones/auth/MTIyLTEyMmRhZG0mJS0zLTQ="> 
+                         <a class="nav-link" href="http://declaraciones/auth/MTIyLTEyMmRhZG0mJS0zLTQ="> 
                     <?php
                     break;
-                    /*case 123:?>
+                    case 123:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTIzLTEyM2RhZG0mJS0zLTQ="> 
                     <?php
-                    break;*/
-                    /*case 124:?>
+                    break;
+                    case 124:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTI0LTEyNGRhZG0mJS0zLTQ="> 
                     <?php
-                    break;*/
-                    /*case 125:?>
+                    break;
+                    case 125:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTI1LTEyNWRhZG0mJS0zLTQ="> 
                     <?php
-                    break;*/
-                    /*case 126:?>
+                    break;
+                    case 126:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTI2LTEyNmRhZG0mJS0zLTQ="> 
                     <?php
-                    break;*/
+                    break;
                     case 127:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTI3LTEyN2RhZG0mJS0zLTQ="> 
                     <?php
                     break;
-                    /*case 128:?>
+                    case 128:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTI4LTEyOGRhZG0mJS0zLTQ="> 
                     <?php
-                    break;*/
+                    break;
                     case 129:?>
                         <a class="nav-link" href="http://declaraciones/auth/MTI5LTEyOWRhZG0mJS0zLTQ="> 
                     <?php
@@ -461,12 +464,60 @@
                         <a class="nav-link" href="http://declaraciones/auth/MTMyLTEzMmRhZG0mJS0zLTQ="> 
                     <?php
                     break;
+                    case 133:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTMzLTEzM2RhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 134:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTM0LTEzNGRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 135:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTM1LTEzNWRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 136:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTM2LTEzNmRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 137:?>
+                      <!--  <a class="nav-link" href="http://declaraciones/auth/MTM3LTEzN2RhZG0mJS0zLTQ="> -->
+                    <?php
+                    break;
+                    case 138:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTM4LTEzOGRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 139:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTM5LTEzOWRhZG0mJS0zLTQ=">
+                    <?php
+                    break;
+                    case 140:?>
+                      <!--  <a class="nav-link" href="http://declaraciones/auth/MTQwLTE0MGRhZG0mJS0zLTQ="> -->
+                    <?php
+                    break;
+                    case 141:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTQxLTE0MWRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 142:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTQyLTE0MmRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 143:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTQzLTE0M2RhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
+                    case 144:?>
+                        <a class="nav-link" href="http://declaraciones/auth/MTQ0LTE0NGRhZG0mJS0zLTQ="> 
+                    <?php
+                    break;
                     }
                     ?>
-
+                    
                 <i class="fa fa-file"></i>
-                    <span>Declaraciones</span></a>
-                </li>
+                    <span>Declaraciones</span></a> 
+                </li> 
                 <?php
                 }
                     if ($objDatosEmpleado->Sistema3==1 )
@@ -475,8 +526,15 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="reporte.php">
                             <i class="fa fa-table"></i>
-                                <span>Reportes</span></a>
-                            </li>
+                                <span>Usuarios</span></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="token_registro.php">
+                            <i class="fa fa-file"></i>
+                                <span>Token Registro</span></a>
+                    </li>
+
                     <?php
                     }
                 ?>

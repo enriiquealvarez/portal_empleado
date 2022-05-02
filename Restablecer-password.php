@@ -55,7 +55,7 @@
 						</div>
                         <input type="text" name="codigo" class="form-control form-control-user"
                                     id="exampleInputEmail" aria-describedby="emailHelp"
-                                    placeholder="Ingresa tu código">
+                                    placeholder="Ingresa tu token">
 					</div>
 					<div class="form-group">
                         <button type="submit" class="btn float-right login_btn" name="BtnRecuperar" value="<?php echo $IDEMPLEADO?>">

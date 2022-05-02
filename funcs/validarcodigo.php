@@ -18,7 +18,7 @@ require '../conexion.php';
       {
         $passEncry= sha1($nuevopass);
         $codigo=random_int(10000, 99999);
-        $sql= "UPDATE empleado SET contrasena='$passEncry', codigo='$codigo' WHERE id= '$IDEMPLEADO' LIMIT 1 ";
+        $sql= "UPDATE empleado SET contrasena='$passEncry', codigo='$codigo', token_activo=0 WHERE id= '$IDEMPLEADO' LIMIT 1 ";
         $resultado = $mysqli->query($sql);
         header('Location: http://portal-empleado/Mensajecambiocorrecto.php');
       }

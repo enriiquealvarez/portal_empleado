@@ -18,7 +18,7 @@
 
         $codigo = GenerarToken(10);
 
-        require "Clases/conexion.php";
+        require "../Clases/conexion.php";
         $sql= "UPDATE empleado SET codigo='$codigo', token_activo=1 WHERE fk_enlace=$idEmpleado";
         $resultado = $mysqli->query($sql);
 
@@ -26,4 +26,4 @@
     }
 ?>
     
-                            
+        
