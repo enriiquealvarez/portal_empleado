@@ -1,4 +1,3 @@
- 
 <?php
 	$title= 'Inicio';
 	require_once('Clases/DatosDelEmpleado.php');	
@@ -19,17 +18,89 @@
 		}
 	}
 ?>
- <marquee bgcolor="#b59769" height="50" width="100%" scrolldelay="100" scrollamount="10" direction="left" loop="infinite">
+
+<marquee bgcolor="#b59769" height="50" width="100%" scrolldelay="100" scrollamount="10" direction="left" loop="infinite">
 <FONT FACE=arial COLOR=white SIZE=6>	
 MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás contar con tu firma electrónica. En caso de no contar con ella, acude al Área de Informática. 
 ¡Recuerda que es importante, cumplir con esta obligación!
 </font>
-</marquee>
-			
+
 <?php require_once('top.php');?>
+</marquee>
+
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
 <body>
-<div class="container">
-	<div class="d-flex justify-content-center h-100">
+
+    <section class="container_count">
+
+        <h1>Días Restantes</h1>
+        <p>Para realizar tu Declaración Patrimonial</p>
+
+        <div class="charts">
+
+            <div class="chart">
+                <!-- un circulo inicial de fondo -->
+                <div class="circle center-abs"></div>
+
+                <!-- area para SVG -->
+
+                <svg class="center-abs" width="150" height="150">
+                    <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                    <circle class="outer" cx="75" cy="75" r="70" />
+                </svg>
+
+                <!-- etiqueta para el contador, en este caso el dia -->
+                <span class="text center-abs" id="days"></span>
+                <h3>Días</h3>
+            </div>
+
+            <div class="chart">
+                <div class="circle center-abs"></div>
+                <svg class="center-abs" width="150" height="150">
+                    <circle class="outer" cx="75" cy="75" r="70" />
+                </svg>
+                <span class="text center-abs" id="hours"></span>
+                <h3>Horas</h3>
+            </div>
+
+            <div class="chart">
+                <div class="circle center-abs"></div>
+                <svg class="center-abs" width="150" height="150">
+                    <circle class="outer" cx="75" cy="75" r="70" />
+                </svg>
+                <span class="text center-abs" id="minutes"></span>
+                <h3>Minutos</h3>
+            </div>
+
+            <div class="chart">
+                <div class="circle center-abs"></div>
+                <svg class="center-abs" width="150" height="150">
+                    <circle class="outer" cx="75" cy="75" r="70" />
+                </svg>
+                <span class="text center-abs" id="seconds"></span>
+                <h3>Segundos</h3>
+            </div>
+
+			
+        </div>
+
+    </section>
+
+	<div class="container">
+	<div class="d-flex justify-content-center h-90">
 		<div class="card">
 		
 			<div class="card-header">
@@ -72,12 +143,13 @@ MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás conta
 	</div>
 </div>
 
+    
+    <script src="js/script.js"></script>
+</body>
 <footer class="navbar-dark text-center bg-dark fixed-bottom">
   <!-- Copyright -->
   <div class="navbar-text">Tribunal Administrativo del Poder Judicial del Estado de Chiapas | Todos los Derechos Reservados | Blvd. Belisario Domínguez No. 1713, Col. Xamaipak, Tuxtla Gutiérrez, Chiapas.
     <a class="text-white" href="https://www.tachiapas.gob.mx/">www.tachiapas.gob.mx</a>
   </div>
 </footer>
-
-</body>
 </html>
