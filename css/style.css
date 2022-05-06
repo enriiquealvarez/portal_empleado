@@ -1,116 +1,86 @@
-/* Made with love by Mutiullah Samim*/
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-html,body{
-background-color: #692e42;
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
+*{
+    font-family: 'Lato', 'sans-serif';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
-
-.container{
-height: 100%;
-align-content: center;
-}
-
-.card{
-height: 370px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
-}
-
-.social_icon span{
-font-size: 30;
-margin-left: 10;
-color: #b59769;
-}
-
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
-
-.card-header h3{
-color: white;
-}
-
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
-}
-
-.input-group-prepend span{
-width: 50px;
-background-color: #b59769;
-color: black;
-border:0 !important;
-}
-
-input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
-}
-
-.remember{
-color: white;
-}
-
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
-.login_btn{
-color: black;
-background-color: #b59769;
-width: 100px;
-}
-
-.login_btn:hover{
-color: black;
-background-color: white;
-}
-
-.links{
-color: white;
-}
-
-.links a{
-margin-left: 4px;
-}
-
-[class*=underlay] {
-    left: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: fixed;
-    top: 0;
-  }
-  .underlay-photo {
-    animation: hue-rotate 6s infinite;
- 
+body{
+    background-image: url(../images/bg.jpg);
     background-size: cover;
-    -webkit-filter: grayscale(30%);
-    z-index: -1;
-  }
-  .underlay-black {
-    background: rgba(0,0,0,0.7);
-    z-index: -1;
-  }
-  
-  @keyframes hue-rotate {
-    from {
-      -webkit-filter: grayscale(30%) hue-rotate(0deg);
-    }
-    to {
-      -webkit-filter: grayscale(30%) hue-rotate(360deg);
-    }
-  }
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.container_count{
+    max-width: 700px;
+    margin:50px auto;
+}
+.container_count h1,
+.container_count p{
+    color:#ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container_count h1{
+    font-size: 2em;
+}
+.container_count p{
+    font-size: 1.5em;
+}
+.center-abs{
+    top:40%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    position: absolute;
+}
+
+.charts{
+    display: flex;
+}
+.chart{
+    position: relative;
+    width:25%;
+    height: 200px;
+}
+.chart h3{
+    color:#ffffff;
+    font-size: 1.8em;
+    position: absolute;
+    bottom:10px;
+    text-align: center;
+    width: 100%;
+   
+}
+.chart svg{
+    z-index: 2;
+}
+
+/* DIV CIRCULO DE FONDO */
+.circle{
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    z-index:1;
+    border:10px #B59769 solid;
+}
+.text{
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    font-size: 3.8em;
+    font-weight: 700;
+    color:#ffffff
+}
+/* SVG CIRCULO */
+.outer{
+    fill:transparent;
+    stroke: #ffffff;
+    stroke-width: 10; /* grosor del borde */
+    stroke-dasharray: 439; /* numero de relleno del borde, se usa el mismo valor en el script.js */
+    transform: rotate(270deg) translate(-150px, 0); 
+    /* giramos el circulo para que su apertura sea en la parte superior 
+    y ajustamos su posicion
+    */
+}
