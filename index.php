@@ -21,7 +21,7 @@
 
 <marquee bgcolor="#b59769" height="50" width="100%" scrolldelay="100" scrollamount="10" direction="left" loop="infinite">
 <FONT FACE=arial COLOR=white SIZE=6>	
-MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás contar con tu firma electrónica. En caso de no contar con ella, acude al Área de Informática. 
+MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás contar con tu firma electrónica. En caso de no contar con ella ó no se encuentre vigente, acude al Área de Informática. 
 ¡Recuerda que es importante, cumplir con esta obligación!
 </font>
 
