@@ -529,11 +529,11 @@
                                 <span>Usuarios</span></a>
                     </li>
 
-                    <li class="nav-item active">
+                    <!--<li class="nav-item active">
                         <a class="nav-link" href="token_registro.php">
                             <i class="fa fa-file"></i>
                                 <span>Token Registro</span></a>
-                    </li>
+                    </li>-->
 
                     <?php
                     }
