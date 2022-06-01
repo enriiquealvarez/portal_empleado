@@ -21,8 +21,7 @@
 
 <marquee bgcolor="#b59769" height="50" width="100%" scrolldelay="100" scrollamount="10" direction="left" loop="infinite">
 <FONT FACE=arial COLOR=white SIZE=6>	
-MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás contar con tu firma electrónica. En caso de no contar con ella ó no se encuentre vigente, acude al Área de Informática. 
-¡Recuerda que es importante, cumplir con esta obligación!
+Recuerda que en el Portal del Empleado podrás descargar tus Nóminas digitales, declaraciones (públicas y completas), así como tus resguardos de bienes y equipos informáticos.
 </font>
 
 <?php require_once('top.php');?>
@@ -46,56 +45,9 @@ MAYO 2022.- Realiza tu declaración de Modificación Patrimonial, deberás conta
 
     <section class="container_count">
 
-        <h1>Días Restantes</h1>
-        <p>Para realizar tu Declaración Patrimonial</p>
-
-        <div class="charts">
-
-            <div class="chart">
-                <!-- un circulo inicial de fondo -->
-                <div class="circle center-abs"></div>
-
-                <!-- area para SVG -->
-
-                <svg class="center-abs" width="150" height="150">
-                    <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
-                    <circle class="outer" cx="75" cy="75" r="70" />
-                </svg>
-
-                <!-- etiqueta para el contador, en este caso el dia -->
-                <span class="text center-abs" id="days"></span>
-                <h3>Días</h3>
-            </div>
-
-            <div class="chart">
-                <div class="circle center-abs"></div>
-                <svg class="center-abs" width="150" height="150">
-                    <circle class="outer" cx="75" cy="75" r="70" />
-                </svg>
-                <span class="text center-abs" id="hours"></span>
-                <h3>Horas</h3>
-            </div>
-
-            <div class="chart">
-                <div class="circle center-abs"></div>
-                <svg class="center-abs" width="150" height="150">
-                    <circle class="outer" cx="75" cy="75" r="70" />
-                </svg>
-                <span class="text center-abs" id="minutes"></span>
-                <h3>Minutos</h3>
-            </div>
-
-            <div class="chart">
-                <div class="circle center-abs"></div>
-                <svg class="center-abs" width="150" height="150">
-                    <circle class="outer" cx="75" cy="75" r="70" />
-                </svg>
-                <span class="text center-abs" id="seconds"></span>
-                <h3>Segundos</h3>
-            </div>
-
-			
-        </div>
+    </section>
+	<br>
+    <section class="container_count">
 
     </section>
 
